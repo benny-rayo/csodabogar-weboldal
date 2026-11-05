@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<!-- Programoldal (B fejlesztő), a program-mozaik.html SABLON szerkezetével. Szöveg: copy/programok-kutyas-foglalkozasok.md -->
+<!-- @include head title="Kutyás foglalkozás gyerekeknek Tatán | Csodabogár" description="Állatasszisztált fejlesztő csoport óvodásoknak és kisiskolásoknak Tatán. Zafír, a terápiás golden retriever mellett könnyebb megszólalni, barátkozni és bátornak lenni." -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Kutyás foglalkozások Zafírral",
+      "serviceType": "Állatasszisztált fejlesztő csoportfoglalkozás gyerekeknek",
+      "description": "Állatasszisztált fejlesztő csoport óvodásoknak és kisiskolásoknak Tatán. Zafír, a terápiás golden retriever mellett könnyebb megszólalni, barátkozni és bátornak lenni.",
+      "audience": {
+        "@type": "PeopleAudience",
+        "audienceType": "óvodások és kisiskolások"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Tata"
+      },
+      "provider": {
+        "@type": [
+          "LocalBusiness",
+          "EducationalOrganization"
+        ],
+        "name": "Csodabogár Fejlesztő Műhely",
+        "telephone": "+36 30 632 5350",
+        "email": "tataifejlesztes@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Alkotmány u. 2.",
+          "postalCode": "2890",
+          "addressLocality": "Tata",
+          "addressCountry": "HU"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Főoldal",
+          "item": "index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Programok",
+          "item": "programok.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Kutyás foglalkozások Zafírral"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mi van, ha a gyermekem fél a kutyától?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jöhet így is. Senkit nem siettetünk. Először távolról figyelheti Zafírt, és ő dönti el, mikor lép közelebb. Ha szeretnék, előtte megbeszéljük, hogyan készítsék fel otthon."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "És ha allergiás?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jelezzék előre, és együtt átgondoljuk, biztonságos-e számára a részvétel. Ha nem, javaslunk egy másik programot, például a MOZAIK műhelyt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zafír vizsgázott terápiás kutya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zafír a Csiga-Biga Alapítvány hivatásos terápiás kutyája, és mindig a felvezetőjével dolgozik."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Be lehet kapcsolódni menet közben?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A csoportok zártak, mert a tíz alkalom alatt a gyerekek összeszoknak egymással és Zafírral. Ha lemaradtak az indulásról, a következő csoportba szívesen várjuk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mi a különbség az óvodás és a kisiskolás csoport között?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A témák hasonlók, de a játékokat és a feladatokat a korosztályhoz igazítjuk. Az óvodásoknál több a báb és a mozgás, a kisiskolásoknál több a beszélgetés és a közös problémamegoldás."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body data-program="kutyas-foglalkozasok">
+<!-- @include header active="programok" -->
+
+<main id="tartalom" tabindex="-1">
+
+  <!-- ============ prog.hero ============
+       Kutyás oldal saját elemei: Zafír-matrica a fotón, "Szia! Én vagyok Zafír" buborék, zsírkrétás mancsok -->
+  <section class="prog-hero" aria-labelledby="hero-cim">
+    <img class="paw float deco--hide-sm" src="assets/svg/mancs-piros.svg" alt="" width="40" height="40" style="left:44%;top:46px;--r0:-20deg;--r1:-12deg">
+    <img class="paw float deco--hide-sm" src="assets/svg/mancs-zold.svg" alt="" width="40" height="40" style="left:49%;top:128px;--r0:12deg;--r1:20deg;--float-delay:-2s">
+    <img class="paw float deco--hide-sm" src="assets/svg/mancs-kek.svg" alt="" width="40" height="40" style="left:47%;bottom:12%;--r0:-6deg;--r1:4deg;--float-delay:-4s">
+    <div class="container split">
+      <div>
+        <a class="back-link" href="programok.html"><!-- @icon nyil -->Programok</a>
+        <img class="prog-hero__icon pop" src="assets/svg/ikon-kutyas-foglalkozas.svg" alt="" width="88" height="88">
+        <h1 class="sticker-title rise" id="hero-cim"><span class="is-prog">Kutyás foglalkozások</span> <span class="is-navy">Zafírral, óvodásoknak és kisiskolásoknak</span></h1>
+        <p class="lead rise" style="--d:.12s">Zafír, a terápiás golden retriever elfogadó jelenlétében a gyerekek könnyebben megszólalnak, kapcsolódnak egymáshoz, és bátrabban próbálnak ki új dolgokat. Minden alkalmat szakember vezet, saját fejlesztési céllal.</p>
+        <ul class="facts" aria-label="Gyors tények">
+          <li class="fact"><span class="icon-circle"><!-- @icon csoport --></span><span>Óvodás csoport: jellemzően <b>szerdánként 16:15-től</b></span></li>
+          <li class="fact"><span class="icon-circle"><!-- @icon csoport --></span><span>Kisiskolás csoport: jellemzően <b>szerdánként 17:30-tól</b></span></li>
+          <li class="fact"><span class="icon-circle"><!-- @icon naptar --></span><span><b>10 alkalom</b>, zárt csoportok</span></li>
+          <li class="fact"><span class="icon-circle"><!-- @icon ora --></span><span>Alkalom hossza és létszám</span> <mark class="todo" title="ADAT KELL: alkalom hossza és a csoport létszáma">Adat kell: hossz, létszám</mark></li>
+          <li class="fact"><span class="icon-circle"><!-- @icon pipa --></span><span>Indulás: ősszel és tavasszal, érdeklődjenek</span> <mark class="todo" title="ELLENŐRIZENDŐ: a FB szerint február végén is indult csoport">Ellenőrizendő: indulások</mark></li>
+        </ul>
+        <div class="cluster btn-row">
+          <a class="btn btn--primary btn--lg" href="kapcsolat.html?program=kutyas-foglalkozasok#urlap">Érdeklődöm a következő csoportról</a>
+          <a class="btn btn--secondary btn--lg" href="kapcsolat.html#urlap">Kérdésem van</a>
+        </div>
+      </div>
+      <div class="prog-hero__visual prog-hero__visual--dog">
+        <figure class="polaroid tape tape--blue tilt-l">
+          <img src="assets/img/gyerekek-zafirral-700.webp" srcset="assets/img/gyerekek-zafirral-700.webp 700w, assets/img/gyerekek-zafirral.webp 1400w" sizes="(min-width: 900px) 520px, 90vw" width="1400" height="677" fetchpriority="high" alt="Óvodások simogatják Zafírt, a terápiás kutyát egy fejlesztő foglalkozáson Tatán">
+          <figcaption>szerdánként Zafírral</figcaption>
+        </figure>
+        <div class="prog-hero__badge" aria-hidden="true"><div class="badge-circle badge-circle--prog"><span class="badge-circle__num">10</span><span class="badge-circle__label">alkalom</span></div></div>
+        <div class="dog-sticker">
+          <p class="speech">Szia! Én vagyok Zafír. Szerdánként várlak játszani!</p>
+          <img class="pop" src="assets/img/zafir.webp" alt="Zafír, a terápiás golden retriever" width="645" height="951">
+        </div>
+        <img class="paw float" src="assets/svg/mancs-sarga.svg" alt="" width="40" height="40" style="left:36%;bottom:-2%;z-index:2;--r0:24deg;--r1:30deg;--float-delay:-1s">
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--wave" style="--divider-color:var(--feher)" aria-hidden="true"></div>
+
+  <!-- ============ prog.kinek ============ -->
+  <section class="section section--white" aria-labelledby="kinek-cim">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Kinek ajánljuk?</p>
+        <h2 id="kinek-cim">Ha a gyermekük valamelyikben most egy kis bátorítást kérne</h2>
+      </div>
+      <div class="kinek-layout">
+        <div>
+          <ul class="check-list">
+            <li><span class="icon-circle"><!-- @icon pipa --></span><span>Az óvodában a szélén álldogál, nem kapcsolódik be a játékba.</span></li>
+            <li><span class="icon-circle"><!-- @icon pipa --></span><span>Új helyzetben teljesen bezárkózik, és csak a kezemet fogja.</span></li>
+            <li><span class="icon-circle"><!-- @icon pipa --></span><span>Hamar felkapja a vizet, nehezen kezeli, ha valami nem úgy megy, ahogy szeretné.</span></li>
+            <li><span class="icon-circle"><!-- @icon pipa --></span><span>Nehezen barátkozik, sokszor egyedül marad.</span></li>
+            <li><span class="icon-circle"><!-- @icon pipa --></span><span>Nagyon szereti az állatokat, és mellettük sokkal felszabadultabb.</span></li>
+          </ul>
+        </div>
+        <aside class="kinek-aside" aria-labelledby="segit-cim">
+          <h3 class="chip-label" id="segit-cim">Miben segít?</h3>
+          <ul class="chip-list"><li class="chip">társas kapcsolódás</li><li class="chip">beilleszkedés</li><li class="chip">bátortalanság</li><li class="chip">szorongás</li><li class="chip">kommunikáció</li><li class="chip">új helyzetek</li><li class="chip">érzelemszabályozás</li><li class="chip">iskolaérettség</li></ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--wave divider--mirror divider--grid" style="--divider-color:var(--krem)" aria-hidden="true"></div>
+
+  <!-- ============ prog.mit ============
+       Kutyás oldal saját elemei: Zafír bemutatkozó kártya (.dog-card) és a biztonság/allergia doboz (.safety) -->
+  <section class="section grid-paper" aria-labelledby="mit-cim">
+    <div class="container">
+      <div class="mit-layout">
+        <div>
+          <p class="eyebrow">A foglalkozásokon</p>
+          <h2 id="mit-cim">Mit csinálnak a gyerekek Zafírral?</h2>
+          <p>A foglalkozások csoportban zajlanak, és a szociális és kommunikációs készségek fejlesztéséről szólnak. Zafír jelenléte biztonságot ad, oldja a feszültséget, és örömtelivé teszi a tanulást.</p>
+          <p>A kutya elfogadó jelenléte hidat képez a zajos, ingergazdag külvilág és a gyermek belső világa között. A gyermek fokozatosan, fenyegetettség nélkül találkozik az új helyzetekkel, a szorongása oldódik, és bátrabban kapcsolódik a többiekhez.</p>
+          <p>Az alkalmakon bábozunk, mesélünk, közösen zenélünk és játszunk, és Zafírral együtt oldunk meg feladatokat. Egy-egy témát, például a testvérekhez vagy a barátokhoz fűződő érzéseket, többféle oldalról is körbejárunk. Az óvodások különösen szeretik a bábozást.</p>
+        </div>
+        <div class="mit-aside">
+          <article class="dog-card" aria-labelledby="zafir-cim">
+            <img class="dog-card__stamp" src="assets/svg/mancs-piros.svg" alt="" width="58" height="58" loading="lazy">
+            <div class="dog-card__head">
+              <div class="dog-card__photo"><img src="assets/img/zafir.webp" alt="Zafír portréja" width="645" height="951" loading="lazy"></div>
+              <div><p>Ki az a Zafír?</p><h3 id="zafir-cim">Zafír</h3></div>
+            </div>
+            <dl>
+              <div><dt>Fajta</dt><dd>golden retriever</dd></div>
+              <div><dt>Gazdája</dt><dd>a Csiga-Biga Mozgás- és Képességfejlesztő Alapítvány, ahol hivatásos terápiás kutyaként dolgozik</dd></div>
+              <div><dt>Felvezetője</dt><dd><mark class="todo" title="ELLENŐRIZENDŐ: Halász-Szántói Emese? Név közölhető-e?">Ellenőrizendő: név, közölhető?</mark></dd></div>
+              <div><dt>Kora</dt><dd>a kutyás csoporttal már a 10. születésnapját is megünnepelte <mark class="todo" title="ELLENŐRIZENDŐ: mikor volt, hány éves most">Ellenőrizendő: hány éves most?</mark></dd></div>
+              <div><dt>Kedvenc játéka</dt><dd><mark class="todo" title="ADAT KELL: Zafír kedvenc játéka">Adat kell: kedvenc játék</mark></dd></div>
+              <div><dt>Amit a gyerekek szeretnek benne</dt><dd><mark class="todo" title="ADAT KELL: egy kedves mondat Margarétától, pl. mit szokott csinálni a foglalkozás elején">Adat kell: egy kedves mondat</mark></dd></div>
+            </dl>
+          </article>
+        </div>
+      </div>
+
+      <div class="safety" id="biztonsag">
+        <img class="safety__paw" src="assets/svg/mancs-kek.svg" alt="" width="52" height="52" loading="lazy">
+        <h3><span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>Biztonság, allergia és félelem a kutyától</h3>
+        <ul class="safety__grid">
+          <li><span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><div><h4>Terápiás kutya</h4><p>Zafír terápiás munkára képzett kutya, és a foglalkozásokon mindig ott van mellette a felvezetője. <mark class="todo" title="ADAT KELL: terápiás vizsga megnevezése, rendszeres állatorvosi ellenőrzés">Adat kell: vizsga, állatorvos</mark></p></div></li>
+          <li><span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 19h4M10 14h4M16 9h4"/><circle cx="6" cy="16" r="1.4"/><circle cx="12" cy="11" r="1.4"/><circle cx="18" cy="6" r="1.4"/></svg></span><div><h4>Ha a gyermek fél a kutyától</h4><p>Senkit nem kérünk, hogy közelebb menjen, mint amennyire szeretne. A félős gyerek először távolról figyeli Zafírt, és ő dönti el, mikor lép egyet közelebb. Ez a lassú közeledés is a fejlődés része.</p></div></li>
+          <li><span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="2.5"/><path d="M12 9.5V4M12 20v-5.5M9.5 12H4M20 12h-5.5M10.2 10.2 6.3 6.3M17.7 17.7l-3.9-3.9M13.8 10.2l3.9-3.9M6.3 17.7l3.9-3.9"/></svg></span><div><h4>Ha a gyermek allergiás</h4><p>Jelezzék előre, és együtt átgondoljuk, biztonságos-e számára a részvétel, vagy egy másik programot javaslunk. <mark class="todo" title="ADAT KELL: van-e konkrét szabály allergia esetén">Adat kell: konkrét szabály</mark></p></div></li>
+          <li><span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3c3.5 4.5 6 7.8 6 11a6 6 0 0 1-12 0c0-3.2 2.5-6.5 6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></svg></span><div><h4>Higiénia</h4><p><mark class="todo" title="ADAT KELL: kézmosás, Zafír ápolása, oltások">Adat kell: kézmosás, ápolás, oltások</mark></p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--cloud divider--top" style="--divider-color:var(--krem)" aria-hidden="true"></div>
+
+  <!-- ============ prog.eredmeny ============ -->
+  <section class="section section--sky" aria-labelledby="eredmeny-cim">
+    <img class="deco drift deco--hide-sm" src="assets/svg/felho.svg" alt="" width="140" height="84" style="width:140px;left:5%;top:70px">
+    <img class="deco drift deco--hide-sm" src="assets/svg/felho.svg" alt="" width="100" height="60" style="width:100px;right:22%;bottom:40px;--drift-dur:32s">
+    <img class="deco float deco--hide-sm" src="assets/svg/mancs-zold.svg" alt="" width="44" height="44" style="width:44px;right:6%;top:70px;--r0:14deg;--r1:22deg">
+    <img class="deco float deco--hide-sm" src="assets/svg/mancs-sarga.svg" alt="" width="36" height="36" style="width:36px;left:9%;bottom:60px;--r0:-14deg;--r1:-6deg;--float-delay:-3s">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <p class="eyebrow">Amit hazavisz</p>
+        <h2 id="eredmeny-cim">Miben fejlődnek a gyerekek?</h2>
+      </div>
+      <ul class="gain-grid gain-grid--odd">
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/sziv.svg" alt="" width="32" height="32" loading="lazy"></span><span>Felismerik és ki tudják fejezni az érzéseiket</span></li>
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/csillag.svg" alt="" width="32" height="32" loading="lazy"></span><span>Megtanulják a közös játék szabályait</span></li>
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/kabala-ulo.svg" alt="" width="32" height="32" loading="lazy"></span><span>Könnyebben kapcsolódnak, és meg tudják tartani a barátságokat</span></li>
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/mancs-kek.svg" alt="" width="32" height="32" loading="lazy"></span><span>Együtt tudnak működni, és megoldanak egy problémát</span></li>
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/kabala-integeto.svg" alt="" width="32" height="32" loading="lazy"></span><span>Jobban bíznak magukban, és ki merik mondani, mit szeretnének, úgy, hogy közben senkit nem bántanak (ezt hívják asszertivitásnak)</span></li>
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/ikon-szulokonzultacio.svg" alt="" width="32" height="32" loading="lazy"></span><span>Szóban és testbeszéddel is jobban értik egymást</span></li>
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/szivarvany.svg" alt="" width="32" height="32" loading="lazy"></span><span>Kezelni tudják az új helyzetek előtti izgalmat</span></li>
+      </ul>
+      <div class="realistic">
+        <img src="assets/svg/ikon-iskolaelokeszites.svg" alt="" width="64" height="64" loading="lazy">
+        <p>Ugyanezek a készségek kellenek az iskolakezdéshez is, ezért az óvodás csoport az iskolaérettséget is támogatja.</p>
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--cloud" style="--divider-color:var(--feher)" aria-hidden="true"></div>
+
+  <!-- ============ prog.menet ============ -->
+  <section class="section section--white" aria-labelledby="menet-cim">
+    <div class="container">
+      <div class="paw-trail" aria-hidden="true"><img src="assets/svg/mancs-piros.svg" alt="" width="34" height="34" loading="lazy"><img src="assets/svg/mancs-zold.svg" alt="" width="34" height="34" loading="lazy"><img src="assets/svg/mancs-kek.svg" alt="" width="34" height="34" loading="lazy"><img src="assets/svg/mancs-sarga.svg" alt="" width="34" height="34" loading="lazy"><img src="assets/svg/mancs-piros.svg" alt="" width="34" height="34" loading="lazy"><img src="assets/svg/mancs-zold.svg" alt="" width="34" height="34" loading="lazy"></div>
+      <div class="section-head">
+        <p class="eyebrow">Egy délután Zafírral</p>
+        <h2 id="menet-cim">Hogyan telik egy alkalom? <mark class="todo" title="ELLENŐRIZENDŐ: így épül-e fel egy alkalom? (a szövegíró javaslata, jóváhagyandó)">Ellenőrizendő: így épül fel?</mark></h2>
+      </div>
+        <ol class="steps steps--prog steps--five">
+          <li><h4>Köszöntjük Zafírt</h4><p>Mindenki a maga módján: simogatással, integetéssel, vagy csak egy mosollyal a távolból.</p></li>
+          <li><h4>A nap témája</h4><p>Bábbal, mesével vagy egy közös történettel indítjuk.</p></li>
+          <li><h4>Közös feladat Zafírral</h4><p>Játék, ahol a gyerekeknek együtt kell működniük, és Zafír is segít.</p></li>
+          <li><h4>Zene és mozgás</h4></li>
+          <li><h4>Búcsúzás</h4><p>Elmondjuk, mi volt ma a legjobb, és elköszönünk Zafírtól a következő szerdáig.</p></li>
+        </ol>
+      <div class="note-row">
+        <img src="assets/svg/mancs-piros.svg" alt="" width="56" height="56" loading="lazy">
+        <p><strong>A tíz alkalomról:</strong> a csoport zárt, vagyis a tíz alkalmon végig ugyanazok a gyerekek vannak együtt. Így van idő összeszokni, bízni egymásban és Zafírban.</p>
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--wave divider--grid" style="--divider-color:var(--krem)" aria-hidden="true"></div>
+
+  <!-- ============ prog.galeria ============ -->
+  <section class="section grid-paper" aria-labelledby="galeria-cim">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Képekben</p>
+        <h2 id="galeria-cim">Egy kis ízelítő</h2>
+      </div>
+      <ul class="mini-gallery mini-gallery--square" data-lightbox>
+        <li><figure class="polaroid tape"><button class="mosaic__item" type="button" data-lightbox-item data-caption="Zafír, a Csodabogár terápiás golden retrievere" style="border-radius:2px;box-shadow:none"><img class="is-cutout" src="assets/img/zafir.webp" alt="Zafír, a Csodabogár terápiás golden retrievere" width="645" height="951" loading="lazy"></button><figcaption>Zafír</figcaption></figure></li>
+        <li><figure class="polaroid tape tape--blue"><button class="mosaic__item" type="button" data-lightbox-item data-caption="Bábozás a kutyás foglalkozáson" style="border-radius:2px;box-shadow:none"><span class="photo-placeholder photo-placeholder--sm" style="--ratio:1"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: bábozás a csoportban, Zafír a háttérben</span></span></button><figcaption>bábozunk</figcaption></figure></li>
+        <li><figure class="polaroid tape tape--green"><button class="mosaic__item" type="button" data-lightbox-item data-caption="Zafír születésnapja a kutyás csoportban, közös zenéléssel" style="border-radius:2px;box-shadow:none"><span class="photo-placeholder photo-placeholder--sm" style="--ratio:1"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: Zafír születésnapja, gyerekek zenélnek</span></span></button><figcaption>Zafír szülinapja</figcaption></figure></li>
+        <li><figure class="polaroid tape tape--pink"><button class="mosaic__item" type="button" data-lightbox-item data-caption="Egy gyerek simogatja Zafírt" style="border-radius:2px;box-shadow:none"><span class="photo-placeholder photo-placeholder--sm" style="--ratio:1"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: egy gyerek keze Zafír bundáján, közelről</span></span></button><figcaption>puha bunda</figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
+  <div class="divider divider--wave divider--mirror" style="--divider-color:var(--feher)" aria-hidden="true"></div>
+
+  <!-- ============ prog.gyik ============ -->
+  <section class="section section--white" aria-labelledby="gyik-cim">
+    <div class="container container--narrow">
+      <div class="section-head">
+        <p class="eyebrow">Gyakori kérdések</p>
+        <h2 id="gyik-cim">Kérdések a kutyás foglalkozásokról</h2>
+      </div>
+      <div class="faq">
+        <details id="gyik-fel" open>
+          <summary>Mi van, ha a gyermekem fél a kutyától?</summary>
+          <div><p>Jöhet így is. Senkit nem siettetünk. Először távolról figyelheti Zafírt, és ő dönti el, mikor lép közelebb. Ha szeretnék, előtte megbeszéljük, hogyan készítsék fel otthon.</p></div>
+        </details>
+        <details id="gyik-allergia">
+          <summary>És ha allergiás?</summary>
+          <div><p>Jelezzék előre, és együtt átgondoljuk, biztonságos-e számára a részvétel. Ha nem, javaslunk egy másik programot, például a <a href="program-mozaik.html">MOZAIK műhelyt</a>. <mark class="todo" title="ADAT KELL: konkrét szabály allergia esetén">Adat kell: konkrét szabály</mark></p></div>
+        </details>
+        <details id="gyik-vizsga">
+          <summary>Zafír vizsgázott terápiás kutya?</summary>
+          <div><p>Zafír a Csiga-Biga Alapítvány hivatásos terápiás kutyája, és mindig a felvezetőjével dolgozik. <mark class="todo" title="ADAT KELL: a terápiás vizsga pontos megnevezése">Adat kell: vizsga neve</mark></p></div>
+        </details>
+        <details id="gyik-menet-kozben">
+          <summary>Be lehet kapcsolódni menet közben?</summary>
+          <div><p>A csoportok zártak, mert a tíz alkalom alatt a gyerekek összeszoknak egymással és Zafírral. Ha lemaradtak az indulásról, a következő csoportba szívesen várjuk.</p></div>
+        </details>
+        <details id="gyik-korosztaly">
+          <summary>Mi a különbség az óvodás és a kisiskolás csoport között?</summary>
+          <div><p>A témák hasonlók, de a játékokat és a feladatokat a korosztályhoz igazítjuk. Az óvodásoknál több a báb és a mozgás, a kisiskolásoknál több a beszélgetés és a közös problémamegoldás. <mark class="todo" title="ELLENŐRIZENDŐ: így van-e a különbség a két csoport között">Ellenőrizendő: így van?</mark></p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--wave divider--grid" style="--divider-color:var(--krem)" aria-hidden="true"></div>
+
+  <!-- ============ prog.tovabbi ============ -->
+  <section class="section grid-paper" aria-labelledby="tovabbi-cim">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Továbbiak</p>
+        <h2 id="tovabbi-cim">Ez is érdekelheti</h2>
+      </div>
+      <div class="grid grid--3 more-programs">
+        <article class="card card--program" data-program="mozaik">
+          <img class="card__icon" src="assets/svg/ikon-mozaik.svg" alt="" width="92" height="92" loading="lazy">
+          <h3>MOZAIK szorongásoldó műhely</h3>
+          <div class="card__meta"><span>6-10 év</span><span>kis csoport</span><span>10 alkalom</span></div>
+          <p>6-10 éveseknek, csütörtök délutánonként.</p>
+          <a class="card__more" href="program-mozaik.html">Részletek<span class="visually-hidden">: MOZAIK szorongásoldó műhely</span> <!-- @icon nyil --></a>
+        </article>
+        <article class="card card--program" data-program="baratsagtabor">
+          <img class="card__icon" src="assets/svg/ikon-baratsagtabor.svg" alt="" width="92" height="92" loading="lazy">
+          <h3>Barátságtábor</h3>
+          <div class="card__meta"><span>nyáron</span><span>az Öreg-tó partján</span></div>
+          <p>Nyáron az Öreg-tó partján.</p>
+          <a class="card__more" href="program-baratsagtabor.html">Részletek<span class="visually-hidden">: Barátságtábor</span> <!-- @icon nyil --></a>
+        </article>
+        <article class="card card--program" data-program="iskolaelokeszites">
+          <img class="card__icon" src="assets/svg/ikon-iskolaelokeszites.svg" alt="" width="92" height="92" loading="lazy">
+          <h3>Iskolaelőkészítő</h3>
+          <div class="card__meta"><span>nagycsoportos óvodásoknak</span><span>egyéni</span></div>
+          <p>Egyéni foglalkozás nagycsoportos óvodásoknak.</p>
+          <a class="card__more" href="program-iskolaelokeszites.html">Részletek<span class="visually-hidden">: Iskolaelőkészítő</span> <!-- @icon nyil --></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- @include cta-band prev="var(--krem)" title="Zafír már várja az új csoportot" text="A csoportok zártak és kis létszámúak, ezért érdemes időben érdeklődni. Szívesen elmondjuk, mikor indul a következő." btn_label="Érdeklődöm a következő csoportról" btn_href="kapcsolat.html?program=kutyas-foglalkozasok#urlap" btn_class="btn--prog" icon="assets/svg/ikon-kutyas-foglalkozas.svg" -->
+<!-- @include footer -->
+</body>
+</html>

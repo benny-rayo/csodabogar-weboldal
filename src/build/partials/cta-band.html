@@ -1,0 +1,29 @@
+<!-- ===== global.cta-band =====
+     Paraméterek (mind opcionális): prev (az előző szekció háttérszíne a felhő-elválasztóhoz, pl. var(--feher)), title, text, btn_label, btn_href, btn_class (btn--primary | btn--prog),
+     icon (pl. assets/svg/ikon-mozaik.svg, program aloldalon a kabala mellé), speech -->
+<div class="divider divider--cloud divider--top" style="--divider-color:{{prev|var(--krem)}}" aria-hidden="true"></div>
+<section class="section section--sky cta-band" aria-labelledby="cta-band-cim">
+  <img class="deco drift deco--hide-sm" src="assets/svg/felho.svg" alt="" width="150" height="90" style="right:6%;top:18%">
+  <img class="deco drift deco--hide-sm" src="assets/svg/felho.svg" alt="" width="110" height="66" style="left:52%;bottom:10%;--drift-dur:32s;opacity:.85">
+  <div class="cta-band__flight deco deco--hide-sm" aria-hidden="true">
+    <svg viewBox="0 0 260 120" width="260" height="120"><path class="flight-trail" d="M8,100 C60,96 70,40 120,52 S190,92 214,40"/></svg>
+    <img src="assets/svg/papirrepulo.svg" alt="" width="70" height="45" style="position:absolute;right:-6px;top:6px">
+  </div>
+  <div class="container cta-band__inner">
+    <div class="cta-band__text">
+      <p class="eyebrow">Beszélgessünk</p>
+      <h2 id="cta-band-cim">{{title|Nem kell tudniuk, melyik program a jó. Elég, ha elmondják, mi aggasztja Önöket.}}</h2>
+      <p class="lead">{{text|Egy rövid telefon vagy üzenet elég az induláshoz. Meghallgatjuk, mi történik otthon, az óvodában vagy az iskolában, és megmondjuk, miben tudunk segíteni.}}</p>
+      <div class="cluster btn-row">
+        <a class="btn {{btn_class|btn--primary}} btn--lg" href="{{btn_href|kapcsolat.html#urlap}}">{{btn_label|Időpontot kérek}}</a>
+        <a class="btn btn--sun btn--lg" href="tel:+36306325350"><!-- @icon telefon -->Hívom: 30/632 5350</a>
+      </div>
+      <p class="cta-band__small"><!-- @icon hely -->Tata, Alkotmány u. 2. <span aria-hidden="true">·</span> <a href="mailto:tataifejlesztes@gmail.com">tataifejlesztes@gmail.com</a></p>
+    </div>
+    <div class="cta-band__visual" aria-hidden="true">
+      <p class="speech speech--right">{{speech|Szívesen segítünk!}}</p>
+      <img class="cta-band__bug float" src="assets/svg/kabala-integeto.svg" alt="" width="180" height="180" style="--r0:-3deg;--r1:3deg">
+      <img class="cta-band__icon" src="{{icon|assets/svg/mancs-piros.svg}}" alt="" width="72" height="72">
+    </div>
+  </div>
+</section>

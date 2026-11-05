@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+.vercel/
+node_modules/
+_screens/
+__pycache__/
+*.pyc
+.DS_Store

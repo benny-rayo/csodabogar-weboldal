@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<!-- @include head title="Programjaink | Csodabogár Fejlesztő Műhely, Tata" description="Egyéni fejlesztés, MOZAIK szorongásoldó csoport, kutyás foglalkozás, iskolaelőkészítő és Barátságtábor Tatán. Nézze meg, mi segíthet a gyermekének." -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "A Csodabogár Fejlesztő Műhely programjai",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Egyéni fejlesztés", "url": "program-egyeni-fejlesztes.html" },
+    { "@type": "ListItem", "position": 2, "name": "Iskolaelőkészítő", "url": "program-iskolaelokeszites.html" },
+    { "@type": "ListItem", "position": 3, "name": "MOZAIK szorongásoldó műhely", "url": "program-mozaik.html" },
+    { "@type": "ListItem", "position": 4, "name": "Merész Macska", "url": "program-meresz-macska.html" },
+    { "@type": "ListItem", "position": 5, "name": "Kutyás foglalkozások Zafírral", "url": "program-kutyas-foglalkozasok.html" },
+    { "@type": "ListItem", "position": 6, "name": "Barátságtábor", "url": "program-baratsagtabor.html" },
+    { "@type": "ListItem", "position": 7, "name": "Szülőkonzultáció", "url": "program-szulokonzultacio.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- @include header active="programok" -->
+
+<main id="tartalom" tabindex="-1">
+
+  <!-- ============ programok.hero ============ -->
+  <section class="page-hero section--sky" aria-labelledby="hero-cim">
+    <img class="deco drift deco--hide-sm" src="assets/svg/felho.svg" alt="" width="150" height="90" style="width:150px;left:42%;top:24px">
+    <img class="deco drift" src="assets/svg/felho.svg" alt="" width="110" height="66" style="width:clamp(80px,14vw,120px);right:4%;bottom:56px;--drift-dur:30s;opacity:.9">
+    <div class="container split">
+      <div class="page-hero__text">
+        <svg class="page-hero__trail" viewBox="0 0 220 70" aria-hidden="true"><path class="flight-trail" d="M4,62 C50,58 60,14 110,24 S170,58 200,20"/></svg>
+        <p class="eyebrow rise" style="margin-top:2.5rem">Programjaink</p>
+        <h1 class="sticker-title rise" id="hero-cim"><span>Minden gyerek más,</span> <span class="is-navy">ezért nálunk nincs két egyforma fejlesztés</span></h1>
+        <p class="lead rise" style="--d:.12s">Egyéni foglalkozás, kis csoport, kutyás délután vagy nyári tábor a tó mellett. Hét program 5-16 éves gyerekeknek és a szüleiknek, Tatán. Ha nem tudják eldönteni, melyik a jó, segítünk.</p>
+        <div class="cluster btn-row rise" style="--d:.2s">
+          <a class="btn btn--primary btn--lg" href="#valasztas">Segítsenek választani</a>
+        </div>
+      </div>
+      <div class="page-hero__visual">
+        <figure class="framed">
+          <img src="assets/img/mozaik-kor-illusztracio-700.webp" srcset="assets/img/mozaik-kor-illusztracio-700.webp 700w, assets/img/mozaik-kor-illusztracio.webp 1400w" sizes="(min-width: 900px) 540px, 92vw" width="1400" height="832" fetchpriority="high" alt="Illusztráció: gyerekek körben ülnek, fölöttük a felhőből szivárvány és mosolygó nap lesz">
+        </figure>
+        <figure class="polaroid tape tilt-r page-hero__mini">
+          <div class="photo-placeholder photo-placeholder--sm" style="--ratio:4/3"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: fejlesztő eszközök az asztalon, háttérben a fagerendás tetőtér</span></div>
+        </figure>
+        <img class="page-hero__bug float" src="assets/svg/kabala-repulo.svg" alt="" width="140" height="100" style="--r0:-4deg;--r1:4deg">
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--cloud divider--grid" style="--divider-color:var(--krem)" aria-hidden="true"></div>
+
+  <!-- ============ programok.szuro + programok.lista ============ -->
+  <section class="section grid-paper" aria-labelledby="lista-cim" style="padding-top:calc(var(--section-y) * .55)">
+    <div class="container">
+      <h2 class="visually-hidden" id="lista-cim">Az összes program</h2>
+      <div class="filter-bar" data-sticky>
+        <p class="filter-bar__label" id="szuro-cimke">Kinek keresnek programot?</p>
+        <div class="chip-list" role="group" aria-labelledby="szuro-cimke" data-filter-group="programlista">
+          <button class="chip chip--filter" type="button" aria-pressed="true" data-filter="mind">Mind</button>
+          <button class="chip chip--filter" type="button" aria-pressed="false" data-filter="ovodas">Óvodásoknak</button>
+          <button class="chip chip--filter" type="button" aria-pressed="false" data-filter="kisiskolas">Kisiskolásoknak</button>
+          <button class="chip chip--filter" type="button" aria-pressed="false" data-filter="nagyobb">Nagyobbaknak</button>
+          <button class="chip chip--filter" type="button" aria-pressed="false" data-filter="szulo">Szülőknek</button>
+          <button class="chip chip--filter" type="button" aria-pressed="false" data-filter="nyar">Nyáron</button>
+        </div>
+        <p class="filter-bar__count" aria-live="polite" data-filter-count>7 program</p>
+      </div>
+
+      <ul class="prog-list" id="programlista">
+        <!-- 1. Egyéni fejlesztés -->
+        <li class="card prog-row" data-program="egyeni-fejlesztes" data-tags="ovodas kisiskolas nagyobb">
+          <div class="prog-row__media">
+            <figure class="polaroid tape tape--blue">
+              <div class="photo-placeholder"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: gyerekkéz betűkártyákkal az asztalon</span></div>
+            </figure>
+            <img class="prog-row__icon" src="assets/svg/ikon-egyeni-fejlesztes.svg" alt="" width="72" height="72" loading="lazy">
+          </div>
+          <div class="prog-row__body">
+            <h2>Egyéni fejlesztés</h2>
+            <ul class="meta-list" aria-label="Röviden">
+              <li class="pill pill--prog">5 éves kortól</li>
+              <li><!-- @icon csoport -->egyéni</li>
+              <li><!-- @icon pipa -->felméréssel kezdődik</li>
+            </ul>
+            <p>Ha az olvasás, az írás, a számolás vagy a figyelem nehezebben megy, mint a többieknek. Képességfelméréssel kezdünk, és a gyermek erősségeire építve, kis lépésekben haladunk. Diszlexia és diszgráfia esetén megelőzésre és korrekcióra is.</p>
+            <p class="chip-label" id="segit-1">Miben segít?</p>
+            <ul class="chip-list" aria-labelledby="segit-1"><li class="chip">tanulási nehézség</li><li class="chip">diszlexia</li><li class="chip">diszgráfia</li><li class="chip">figyelem</li><li class="chip">finommozgás</li></ul>
+            <a class="btn btn--prog" href="program-egyeni-fejlesztes.html">Részletek<span class="visually-hidden">: Egyéni fejlesztés</span></a>
+          </div>
+        </li>
+        <!-- 2. Iskolaelőkészítő -->
+        <li class="card prog-row" data-program="iskolaelokeszites" data-tags="ovodas">
+          <div class="prog-row__media">
+            <figure class="polaroid tape">
+              <img src="assets/img/ceruzas-fiu-700.webp" srcset="assets/img/ceruzas-fiu-700.webp 700w, assets/img/ceruzas-fiu.webp 1400w" sizes="(min-width: 900px) 430px, 88vw" width="1400" height="747" loading="lazy" alt="Illusztráció: kisfiú repül egy óriási ceruzán, körülötte színes betűk és számok">
+            </figure>
+            <img class="prog-row__icon" src="assets/svg/ikon-iskolaelokeszites.svg" alt="" width="72" height="72" loading="lazy">
+          </div>
+          <div class="prog-row__body">
+            <h2>Iskolaelőkészítő</h2>
+            <ul class="meta-list" aria-label="Röviden">
+              <li class="pill pill--prog">nagycsoportos óvodásoknak</li>
+              <li><!-- @icon csoport -->egyéni foglalkozások</li>
+            </ul>
+            <p>Az iskolakezdés előtti évben játékosan erősítjük azt, amire az első osztályban szükség lesz: a figyelmet, a kéz ügyességét, a beszédet és a feladattartást. Abban is segítünk, ha bizonytalanok, menjen-e már iskolába.</p>
+            <p class="chip-label" id="segit-2">Miben segít?</p>
+            <ul class="chip-list" aria-labelledby="segit-2"><li class="chip">iskolaérettség</li><li class="chip">feladattartás</li><li class="chip">ceruzafogás</li><li class="chip">diszlexia-megelőzés</li></ul>
+            <a class="btn btn--prog" href="program-iskolaelokeszites.html">Részletek<span class="visually-hidden">: Iskolaelőkészítő</span></a>
+          </div>
+        </li>
+        <!-- 3. MOZAIK -->
+        <li class="card prog-row" data-program="mozaik" data-tags="kisiskolas">
+          <div class="prog-row__media">
+            <figure class="polaroid tape tape--pink">
+              <img src="assets/img/mozaik-kor-gyerekek-700.webp" srcset="assets/img/mozaik-kor-gyerekek-700.webp 700w, assets/img/mozaik-kor-gyerekek.webp 1400w" sizes="(min-width: 900px) 430px, 88vw" width="1400" height="598" loading="lazy" alt="Illusztráció: kisiskolások kézen fogva körben ülnek, a MOZAIK szorongásoldó műhely jelképe">
+            </figure>
+            <img class="prog-row__icon" src="assets/svg/ikon-mozaik.svg" alt="" width="72" height="72" loading="lazy">
+          </div>
+          <div class="prog-row__body">
+            <h2>MOZAIK szorongásoldó műhely</h2>
+            <ul class="meta-list" aria-label="Röviden">
+              <li class="pill pill--prog">6-10 év</li>
+              <li><!-- @icon csoport -->kis csoport</li>
+              <li><!-- @icon naptar -->10 alkalom</li>
+              <li><!-- @icon ora -->90 perc</li>
+            </ul>
+            <p>Feszült, félénk, nehezen megnyíló kisiskolásoknak. Mind a tíz alkalom egy természeti kép, például a rét, a víz vagy az erdő köré épül, mesével, mozgással, alkotással és relaxációval. A csoportok jellemzően csütörtökönként 17 órától találkoznak.</p>
+            <p class="chip-label" id="segit-3">Miben segít?</p>
+            <ul class="chip-list" aria-labelledby="segit-3"><li class="chip">szorongás</li><li class="chip">hasfájós reggelek</li><li class="chip">visszahúzódás</li><li class="chip">önbizalom</li></ul>
+            <a class="btn btn--prog" href="program-mozaik.html">Részletek<span class="visually-hidden">: MOZAIK szorongásoldó műhely</span></a>
+          </div>
+        </li>
+        <!-- 4. Merész Macska -->
+        <li class="card prog-row" data-program="meresz-macska" data-tags="nagyobb">
+          <div class="prog-row__media">
+            <figure class="polaroid tape tape--green">
+              <div class="photo-placeholder"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: nagyobb gyerekek (12+) csoportban beszélgetnek</span></div>
+            </figure>
+            <img class="prog-row__icon" src="assets/svg/ikon-meresz-macska.svg" alt="" width="72" height="72" loading="lazy">
+          </div>
+          <div class="prog-row__body">
+            <h2>Merész Macska</h2>
+            <ul class="meta-list" aria-label="Röviden">
+              <li class="pill pill--prog">12 éves kortól</li>
+              <li><mark class="todo" title="ADAT KELL: egyéni vagy csoportos, hány alkalom">Adat kell: forma, alkalmak száma</mark></li>
+            </ul>
+            <p>Nagyobb gyerekeknek és kamaszoknak, akiket a félelmeik visszatartanak dolgozat előtt, szerepléskor vagy új helyzetekben. Kipróbálható technikákat tanulnak a feszültség kezelésére, és lépésről lépésre gyakorolják a szembenézést azzal, amitől tartanak.</p>
+            <p class="chip-label" id="segit-4">Miben segít?</p>
+            <ul class="chip-list" aria-labelledby="segit-4"><li class="chip">vizsgadrukk</li><li class="chip">szereplési félelem</li><li class="chip">aggódás</li><li class="chip">kerülés</li></ul>
+            <a class="btn btn--prog" href="program-meresz-macska.html">Részletek<span class="visually-hidden">: Merész Macska</span></a>
+          </div>
+        </li>
+        <!-- 5. Kutyás foglalkozások -->
+        <li class="card prog-row" data-program="kutyas-foglalkozasok" data-tags="ovodas kisiskolas">
+          <div class="prog-row__media">
+            <figure class="polaroid tape tape--blue">
+              <img src="assets/img/gyerekek-zafirral-700.webp" srcset="assets/img/gyerekek-zafirral-700.webp 700w, assets/img/gyerekek-zafirral.webp 1400w" sizes="(min-width: 900px) 430px, 88vw" width="1400" height="677" loading="lazy" alt="Gyerekek simogatják Zafírt, a terápiás golden retrievert">
+            </figure>
+            <img class="prog-row__icon" src="assets/svg/ikon-kutyas-foglalkozas.svg" alt="" width="72" height="72" loading="lazy">
+          </div>
+          <div class="prog-row__body">
+            <h2>Kutyás foglalkozások Zafírral</h2>
+            <ul class="meta-list" aria-label="Röviden">
+              <li class="pill pill--prog">óvodás és kisiskolás csoport</li>
+              <li><!-- @icon naptar -->10 alkalom</li>
+              <li><!-- @icon csoport -->zárt csoport</li>
+            </ul>
+            <p>Zafír, a terápiás golden retriever elfogadó jelenlétében a gyerekek könnyebben megszólalnak, barátkoznak és kezelik az érzéseiket. Az óvodás csoport jellemzően szerdánként 16:15-től, a kisiskolás 17:30-tól találkozik.</p>
+            <p class="chip-label" id="segit-5">Miben segít?</p>
+            <ul class="chip-list" aria-labelledby="segit-5"><li class="chip">társas kapcsolódás</li><li class="chip">beilleszkedés</li><li class="chip">bátortalanság</li><li class="chip">érzelemszabályozás</li></ul>
+            <a class="btn btn--prog" href="program-kutyas-foglalkozasok.html">Részletek<span class="visually-hidden">: Kutyás foglalkozások Zafírral</span></a>
+          </div>
+        </li>
+        <!-- 6. Barátságtábor -->
+        <li class="card prog-row" data-program="baratsagtabor" data-tags="kisiskolas nagyobb nyar">
+          <div class="prog-row__media">
+            <figure class="polaroid tape">
+              <div class="photo-placeholder"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: gyerekek a tóparton, nyári fényben (Öreg-tó)</span></div>
+            </figure>
+            <img class="prog-row__icon" src="assets/svg/ikon-baratsagtabor.svg" alt="" width="72" height="72" loading="lazy">
+          </div>
+          <div class="prog-row__body">
+            <h2>Barátságtábor</h2>
+            <ul class="meta-list" aria-label="Röviden">
+              <li class="pill pill--prog">nyáron</li>
+              <li><!-- @icon hely -->az Öreg-tó partján</li>
+              <li><mark class="todo" title="ADAT KELL: korosztály, napközis vagy ott alvós, hány nap (a szűrőben is: kisiskolás és nagyobb?)">Adat kell: korosztály, napközis?, hány nap</mark></li>
+            </ul>
+            <p>Tíz nyár óta a Csodabogár tábora. Tematikus napokon mesélünk, zenélünk, alkotunk és csapatban játszunk, és marad idő a mezítlábas szabad játékra is a tóparton. A barátkozás itt a fő program.</p>
+            <p class="chip-label" id="segit-6">Miben segít?</p>
+            <ul class="chip-list" aria-labelledby="segit-6"><li class="chip">barátkozás</li><li class="chip">bátorság</li><li class="chip">együttműködés</li><li class="chip">szabad játék</li></ul>
+            <a class="btn btn--prog" href="program-baratsagtabor.html">Részletek<span class="visually-hidden">: Barátságtábor</span></a>
+          </div>
+        </li>
+        <!-- 7. Szülőkonzultáció -->
+        <li class="card prog-row" data-program="szulokonzultacio" data-tags="szulo">
+          <div class="prog-row__media">
+            <figure class="polaroid tape tape--pink">
+              <div class="photo-placeholder"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: két bögre az asztalon, mellette jegyzetfüzet, háttérben a műhely</span></div>
+            </figure>
+            <img class="prog-row__icon" src="assets/svg/ikon-szulokonzultacio.svg" alt="" width="72" height="72" loading="lazy">
+          </div>
+          <div class="prog-row__body">
+            <h2>Szülőkonzultáció</h2>
+            <ul class="meta-list" aria-label="Röviden">
+              <li class="pill pill--prog">szülőknek</li>
+              <li><!-- @icon csoport -->egyéni beszélgetés</li>
+            </ul>
+            <p>Ha tanácsot kérnének tanulási nehézség, viselkedési gondok, szorongás vagy ADHD kapcsán. Önök ismerik legjobban a gyermeküket, mi ehhez adunk szakmai hátteret és kézzelfogható ötleteket az otthoni napokhoz.</p>
+            <p class="chip-label" id="segit-7">Miben segít?</p>
+            <ul class="chip-list" aria-labelledby="segit-7"><li class="chip">nevelési kérdések</li><li class="chip">ADHD a mindennapokban</li><li class="chip">szakértői vélemény értelmezése</li><li class="chip">házi feladat körüli viták</li></ul>
+            <a class="btn btn--prog" href="program-szulokonzultacio.html">Részletek<span class="visually-hidden">: Szülőkonzultáció</span></a>
+          </div>
+        </li>
+      </ul>
+      <p class="card filter-empty" hidden data-filter-empty>Erre most nincs külön programunk, de írjanak nekünk, és megnézzük, hogyan tudunk segíteni.</p>
+    </div>
+  </section>
+
+  <!-- ============ programok.nemtudom ============ -->
+  <section class="section grid-paper" id="valasztas" aria-labelledby="valasztas-cim" style="padding-top:0">
+    <div class="container">
+      <div class="card card--paper tape tape--green choose-box">
+        <img src="assets/svg/kabala-olvaso.svg" alt="" width="140" height="143" loading="lazy">
+        <div>
+          <p class="eyebrow">Segítünk választani</p>
+          <h2 id="valasztas-cim">Nem tudják, melyik a jó? Ezt nem kell egyedül eldönteniük.</h2>
+          <p>Írják le pár mondatban, mi aggasztja Önöket, vagy hívjanak fel. Elmondjuk, melyik programot javasoljuk, és miért. Van, amikor egy egyéni felmérés vagy egy szülői beszélgetés a jó kezdés, és csak utána jön egy csoport.</p>
+          <div class="cluster btn-row">
+            <a class="btn btn--primary" href="kapcsolat.html#urlap">Időpontot kérek</a>
+            <a class="btn btn--ghost" href="tel:+36306325350"><!-- @icon telefon -->Hívom: 30/632 5350</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- @include cta-band prev="var(--krem)" -->
+<!-- @include footer -->
+</body>
+</html>

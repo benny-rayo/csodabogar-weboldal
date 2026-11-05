@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<!-- =====================================================================
+     PROGRAM ALOLDAL SABLON (minta: MOZAIK)
+     Új programoldalhoz: másold ezt a fájlt _build/pages/program-<slug>.html néven,
+     és csak a "CSERÉLD" jelölésű részeket írd át. A színeket a <body data-program="<slug>">
+     adja (--prog, --prog-ink, --prog-soft, --prog-on), a CSS-hez nem kell nyúlni.
+     Slugok: egyeni-fejlesztes, iskolaelokeszites, mozaik, meresz-macska,
+             kutyas-foglalkozasok, baratsagtabor, szulokonzultacio
+     Szekciók sorrendje (sitemap.md): prog.hero → prog.kinek → prog.mit → prog.eredmeny
+       → prog.menet → prog.galeria → prog.gyik → prog.tovabbi → global.cta-band
+     A [[ADAT KELL]] / [[ELLENŐRIZENDŐ]] jelöléseket <mark class="todo" title="teljes szöveg">rövid</mark>
+     formában tedd be; ha egy egész bekezdés csak jelölés: <p class="todo-note"><mark class="todo" ...>Margarétától kérdezendő: ...</mark></p>
+     ===================================================================== -->
+<!-- CSERÉLD: title + description a copy/programok-<slug>.md "SEO title" és "Meta description" sorából -->
+<!-- @include head title="MOZAIK szorongásoldó csoport kisiskolásoknak | Tata" description="10 alkalmas szorongásoldó műhely 6-10 éves gyerekeknek Tatán: mese, játék, mozgás, alkotás és szimbólumterápia kis csoportban, csütörtök délutánonként." -->
+<!-- CSERÉLD: JSON-LD (Service + FAQPage + BreadcrumbList). A GYIK válaszok szövege a jelölések NÉLKÜL kerüljön ide. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "MOZAIK szorongásoldó műhely",
+      "serviceType": "Szorongásoldó csoportfoglalkozás gyerekeknek",
+      "description": "10 alkalmas szorongásoldó műhely 6-10 éves gyerekeknek Tatán: mese, játék, mozgás, alkotás és szimbólumterápia kis csoportban, csütörtök délutánonként.",
+      "audience": { "@type": "PeopleAudience", "suggestedMinAge": 6, "suggestedMaxAge": 10 },
+      "areaServed": { "@type": "City", "name": "Tata" },
+      "provider": {
+        "@type": ["LocalBusiness", "EducationalOrganization"],
+        "name": "Csodabogár Fejlesztő Műhely",
+        "telephone": "+36 30 632 5350",
+        "email": "tataifejlesztes@gmail.com",
+        "address": { "@type": "PostalAddress", "streetAddress": "Alkotmány u. 2.", "postalCode": "2890", "addressLocality": "Tata", "addressCountry": "HU" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Főoldal", "item": "index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Programok", "item": "programok.html" },
+        { "@type": "ListItem", "position": 3, "name": "MOZAIK szorongásoldó műhely" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Mi a különbség a MOZAIK és a Merész Macska között?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A MOZAIK 6-10 éves gyerekeknek szól, és sok mesével, képpel, játékkal és alkotással dolgozik. A Merész Macska 12 éves kortól ajánlott, és a nagyobbaknak konkrét technikákat tanít a félelmek kezelésére. Ha a gyermek 10 és 12 év között van, beszéljük meg, melyik illik hozzá jobban." } },
+        { "@type": "Question", "name": "Mi van, ha a gyermekem a csoportban sem mer megszólalni?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ezt senki nem várja el tőle. Sokan csendben figyelnek az első alkalmakon, és ez rendben van. A foglalkozásokon rajzolni, mozogni és alkotni is lehet, így a csendesebb gyerekek is megtalálják, hogyan kapcsolódjanak." } },
+        { "@type": "Question", "name": "Be lehet kapcsolódni később, menet közben?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A tíz alkalom egymásra épül, és a gyerekeknek fontos, hogy ugyanazokkal a társakkal legyenek, ezért a csoport az elejétől a végéig együtt marad. Ha lemaradtak az indulásról, a következő csoportba szívesen várjuk." } },
+        { "@type": "Question", "name": "Elég a tíz alkalom?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sok gyereknek sokat ad. Ha a végén úgy látjuk, hogy a gyermeknek még szüksége van támogatásra, javaslatot teszünk a folytatásra, például egyéni foglalkozásra vagy szülőkonzultációra." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<!-- CSERÉLD: data-program a slug legyen -->
+<body data-program="mozaik">
+<!-- @include header active="programok" -->
+
+<main id="tartalom" tabindex="-1">
+
+  <!-- ============ prog.hero ============
+       CSERÉLD: ikon (assets/svg/ikon-<...>.svg), H1 két sora (1. sor: program neve .is-prog, 2. sor: alcím-rész navy),
+       mottó (ha nincs, a <p class="hand ..."> sor törölhető), lead, gyors tények (.facts > .fact), kör-badge,
+       gombok, jobb oldali kép (layout-spec 3. táblázat: kép vagy .photo-placeholder) -->
+  <section class="prog-hero" aria-labelledby="hero-cim">
+    <img class="deco float deco--hide-sm" src="assets/svg/csillag.svg" alt="" width="34" height="34" style="width:34px;left:46%;top:40px;rotate:12deg">
+    <div class="container split">
+      <div>
+        <a class="back-link" href="programok.html"><!-- @icon nyil -->Programok</a>
+        <img class="prog-hero__icon pop" src="assets/svg/ikon-mozaik.svg" alt="" width="88" height="88">
+        <h1 class="sticker-title rise" id="hero-cim"><span class="is-prog">MOZAIK</span> <span class="is-navy">szorongásoldó műhely 6-10 éves gyerekeknek</span></h1>
+        <p class="hand prog-hero__motto rise" style="--d:.08s">„Alattam a föld, fölöttem az ég, bennem a létra.” <small>Weöres Sándor</small></p>
+        <p class="lead rise" style="--d:.12s">Kis csoportban, tíz alkalmon át segítünk a feszült, félénk, nehezen megnyíló kisiskolásoknak, hogy apránként elengedjék a szorongásaikat, és rátaláljanak a saját erejükre.</p>
+        <ul class="facts" aria-label="Gyors tények">
+          <li class="fact"><span class="icon-circle"><!-- @icon csoport --></span><span>Korosztály: <b>6-10 év</b></span></li>
+          <li class="fact"><span class="icon-circle"><!-- @icon csoport --></span><span>Forma: <b>kis csoport</b></span> <mark class="todo" title="ELLENŐRIZENDŐ: létszám, egy korábbi FB-hirdetés 6 gyereket írt">Ellenőrizendő: létszám</mark></li>
+          <li class="fact"><span class="icon-circle"><!-- @icon naptar --></span><span><b>10 alkalom</b>, alkalmanként 90 perc</span></li>
+          <li class="fact"><span class="icon-circle"><!-- @icon ora --></span><span>Jellemzően <b>csütörtökönként 17 órától</b></span></li>
+          <li class="fact"><span class="icon-circle"><!-- @icon pipa --></span><span>Indulás: ősszel és tavasszal, érdeklődjenek</span> <mark class="todo" title="ELLENŐRIZENDŐ: indulási időszakok">Ellenőrizendő: indulások</mark></li>
+        </ul>
+        <div class="cluster btn-row">
+          <a class="btn btn--primary btn--lg" href="kapcsolat.html?program=mozaik#urlap">Érdeklődöm a következő csoportról</a>
+          <a class="btn btn--secondary btn--lg" href="kapcsolat.html#urlap">Kérdésem van</a>
+        </div>
+      </div>
+      <div class="prog-hero__visual">
+        <figure class="polaroid tape tilt-r">
+          <img src="assets/img/mozaik-kor-illusztracio-700.webp" srcset="assets/img/mozaik-kor-illusztracio-700.webp 700w, assets/img/mozaik-kor-illusztracio.webp 1400w" sizes="(min-width: 900px) 520px, 90vw" width="1400" height="832" fetchpriority="high" alt="Kisiskolások körben ülnek a MOZAIK szorongásoldó műhelyben, fölöttük a szomorú felhőből szivárvány és nap lesz (illusztráció)">
+          <figcaption>a felhő mögött ott a nap</figcaption>
+        </figure>
+        <div class="prog-hero__badge" aria-hidden="true"><div class="badge-circle badge-circle--prog"><span class="badge-circle__num">10</span><span class="badge-circle__label">alkalom</span></div></div>
+        <img class="prog-hero__flower float" src="assets/svg/virag.svg" alt="" width="104" height="139" style="--r0:6deg;--r1:10deg">
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--wave" style="--divider-color:var(--feher)" aria-hidden="true"></div>
+
+  <!-- ============ prog.kinek ============
+       CSERÉLD: a felismerhető helyzetek listája (.check-list), "Miben segít?" chipek, a lista utáni bekezdés.
+       A .flower-card a MOZAIK saját, kiemelt doboza (virág-metafora) - más programnál törölhető
+       vagy egy hasonló "kiemelt gondolat" dobozra cserélhető. -->
+  <section class="section section--white" aria-labelledby="kinek-cim">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Ismerős?</p>
+        <h2 id="kinek-cim">Kinek ajánljuk a MOZAIK műhelyt?</h2>
+      </div>
+      <div class="kinek-layout">
+        <div>
+          <ul class="check-list">
+            <li><span class="icon-circle"><!-- @icon pipa --></span><span>Reggelente fáj a hasa vagy a feje, és nem akar iskolába menni.</span></li>
+            <li><span class="icon-circle"><!-- @icon pipa --></span><span>Az iskolában meg sem szólal, itthon pedig a legkisebb dologtól kiborul.</span></li>
+            <li><span class="icon-circle"><!-- @icon pipa --></span><span>Sokat aggódik: mi lesz, ha rossz jegyet kap, ha elkésünk, ha nem lesz kivel játszania.</span></li>
+            <li><span class="icon-circle"><!-- @icon pipa --></span><span>Nehezen válik el tőlem, minden új helyzet előtt napokig feszült.</span></li>
+            <li><span class="icon-circle"><!-- @icon pipa --></span><span>Mindent tökéletesen akar csinálni, és sír, ha valami nem sikerül.</span></li>
+            <li><span class="icon-circle"><!-- @icon pipa --></span><span>Nem beszél arról, mi bántja, csak látom rajta, hogy valami nyomja.</span></li>
+          </ul>
+          <p class="kinek-after">Ezek a jelek könnyen tűnhetnek hisztinek, makacsságnak vagy szimulálásnak. Sokszor szorongás áll mögöttük: tartós belső feszültség, ami a gyermek erejének nagy részét elviszi. Ha ismerősek, érdemes beszélnünk.</p>
+        </div>
+        <aside class="kinek-aside" aria-labelledby="segit-cim">
+          <h3 class="chip-label" id="segit-cim">Miben segít?</h3>
+          <ul class="chip-list"><li class="chip">szorongás</li><li class="chip">hasfájós reggelek</li><li class="chip">visszahúzódás</li><li class="chip">önbizalom</li><li class="chip">új helyzetek</li><li class="chip">érzelmek kifejezése</li></ul>
+        </aside>
+      </div>
+
+      <figure class="flower-card">
+        <div>
+          <h3>A szorongó gyerek olyan, mint egy összezárt virág</h3>
+          <blockquote><p>A szorongó gyerek olyan, mint egy kis virág, amely szorosan összezárja a szirmait. Sok benne a szín, az illat, az érték, de alig lehet belelátni, hozzáférni, kapcsolódni hozzá. A világból is csak keveset enged be. Az erő, amellyel a szirmait összezárva tartja, rengeteg energiát elvisz. A mi dolgunk az, hogy a szirmokat finoman kinyissuk, és jó élményt adjunk neki arról, milyen kapcsolódni.</p></blockquote>
+          <figcaption class="signature">Píri Margaréta</figcaption>
+        </div>
+        <div class="flower-card__art" aria-hidden="true">
+          <!-- @svg virag class="js-bloom" -->
+          <span class="hand">a szirmok finoman kinyílnak</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+  <div class="divider divider--wave divider--mirror divider--grid" style="--divider-color:var(--krem)" aria-hidden="true"></div>
+
+  <!-- ============ prog.mit ============
+       CSERÉLD: H2 + 2-4 bekezdés; jobb oldalon egy .story-card (kiemelt doboz) + egy polaroid fotóhely. -->
+  <section class="section grid-paper" aria-labelledby="mit-cim">
+    <div class="container mit-layout">
+      <div>
+        <p class="eyebrow">A műhelyben</p>
+        <h2 id="mit-cim">Mi történik a MOZAIK foglalkozásokon?</h2>
+        <p>A MOZAIK név a személyiség sokszínűségére utal, és arra is, ahogyan a foglalkozások felépülnek. Mind a tíz alkalomnak van egy saját szimbóluma, többnyire egy természeti kép: a rét, a víz, az erdő. E köré épül a 90 perc.</p>
+        <p>Minden foglalkozás kisebb részekből, mozaikokból áll össze. Mese, mozgás, közös játék, alkotás, zene és relaxáció követi egymást, tervezett sorrendben. A különböző technikák egymásra épülnek, így a gyermek egy délután alatt többféle módon is megtapasztalhatja, hogy biztonságban van, és képes valamire.</p>
+        <p>A szimbólumterápia képekkel, elképzelt tájakkal dolgozik. Segít kifejezni azt, amit a gyermek még nem tud szavakba önteni. Egy erdőben meg lehet keresni a félelmetes barlangot és a biztonságos tisztást is, és közben ki lehet próbálni, mi segít bátornak maradni.</p>
+        <p class="fine-print">A MOZAIK kidolgozott, akkreditált szorongásoldó program kisiskolásoknak. <mark class="todo" title="ELLENŐRIZENDŐ: azonos-e Harkácsi Judit akkreditált MOZAIK programjával, és Margaréta elvégezte-e a hozzá tartozó képzést? Ha igen, a mondat maradhat, ha nem, töröljük.">Ellenőrizendő: akkreditáció, képzés</mark></p>
+      </div>
+      <div class="mit-aside">
+        <div class="card card--paper tape tape--blue story-card">
+          <h3>Egy valódi alkalomból</h3>
+          <p>Az egyik ERDŐ-alkalmon a gyerekek közösen festettek egy erdőt üveglapra, fákkal, barlanggal és mesebeli lényekkel. Közben Gryllus Vilmos Hallgatag erdő című dalát hallgatták, aztán hangszerekkel maguk is megszólaltatták az erdőt.</p>
+        </div>
+        <figure class="polaroid tape tilt-r">
+          <div class="photo-placeholder" style="--ratio:4/3"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: az üveglapra festett közös erdő, közelről</span></div>
+          <figcaption>a Hallgatag erdő</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--cloud divider--top" style="--divider-color:var(--krem)" aria-hidden="true"></div>
+
+  <!-- ============ prog.eredmeny ============
+       CSERÉLD: 4-6 .gain elem (ikon: bármely díszítő SVG az assets/svg-ből, alt=""), és a "reális elvárás" sor. -->
+  <section class="section section--sky" aria-labelledby="eredmeny-cim">
+    <img class="deco drift deco--hide-sm" src="assets/svg/felho.svg" alt="" width="140" height="84" style="width:140px;left:5%;top:70px">
+    <img class="deco drift deco--hide-sm" src="assets/svg/felho.svg" alt="" width="100" height="60" style="width:100px;right:22%;bottom:40px;--drift-dur:32s">
+    <img class="deco" src="assets/svg/nap.svg" alt="" width="90" height="90" style="width:clamp(60px,9vw,90px);right:5%;top:clamp(40px,6vw,70px)">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <p class="eyebrow">Amit hazavisz</p>
+        <h2 id="eredmeny-cim">Mit visz haza a gyermek a tíz alkalomból?</h2>
+      </div>
+      <ul class="gain-grid">
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/ikon-szulokonzultacio.svg" alt="" width="32" height="32" loading="lazy"></span><span>Szavakat az érzéseire: meg tudja mondani, ha fél, ha dühös, ha szomorú</span></li>
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/level.svg" alt="" width="32" height="32" loading="lazy"></span><span>Néhány egyszerű módszert, amivel megnyugtathatja magát, például légzést és ellazulást <mark class="todo" title="ELLENŐRIZENDŐ: milyen technikákat tanulnak">Ellenőrizendő: technikák</mark></span></li>
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/csillag.svg" alt="" width="32" height="32" loading="lazy"></span><span>Bátrabb megszólalást egy csoport előtt</span></li>
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/sziv.svg" alt="" width="32" height="32" loading="lazy"></span><span>Azt az élményt, hogy a félelmeivel nincs egyedül</span></li>
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/szivarvany.svg" alt="" width="32" height="32" loading="lazy"></span><span>Saját alkotásokat, amelyekre büszke lehet</span></li>
+        <li class="gain"><span class="icon-circle"><img src="assets/svg/kabala-ulo.svg" alt="" width="32" height="32" loading="lazy"></span><span>Önöknek pedig jobb rálátást arra, mi zajlik a gyermekükben</span></li>
+      </ul>
+      <div class="realistic">
+        <img src="assets/svg/virag.svg" alt="" width="64" height="85" loading="lazy">
+        <p><strong>Reális elvárás:</strong> a szorongás nem tűnik el egyik napról a másikra. A tíz alkalom alatt a gyerekek apránként oldódnak, és sok olyan élményt gyűjtenek, amelyre később is támaszkodhatnak.</p>
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--cloud" style="--divider-color:var(--feher)" aria-hidden="true"></div>
+
+  <!-- ============ prog.menet ============
+       CSERÉLD: a MOZAIK 10 szimbólum-csempéje (.symbols) program-specifikus; más programnál elég a .steps lista
+       (3-6 lépés, class="steps steps--prog", 6 lépésnél + steps--six). Barátságtábor: tematikus napok. -->
+  <section class="section section--white" aria-labelledby="menet-cim">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">A tíz alkalom</p>
+        <h2 id="menet-cim">Tíz alkalom, tíz kép</h2>
+        <p>Minden alkalomnak saját szimbóluma van, ezek egymásra épülnek. A tíz kép közül néhány:</p>
+      </div>
+      <ul class="symbols">
+        <li class="symbol">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M6 50c8-3 16-4 26-4s18 1 26 4v8H6z" fill="#7BC86C"/><path d="M14 46c0-8 2-14 4-18M20 46c1-7 4-12 8-15M44 46c0-7-3-12-7-15M50 46c-1-8-3-13-5-17" stroke="#2F8A0C" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="18" cy="24" r="5" fill="#FFD23F" stroke="#16131C" stroke-width="2"/><circle cx="46" cy="26" r="5" fill="#FF7F9E" stroke="#16131C" stroke-width="2"/><circle cx="32" cy="18" r="5" fill="#fff" stroke="#16131C" stroke-width="2"/><circle cx="32" cy="18" r="2" fill="#FFD23F"/></svg>
+          <b>Rét</b><mark class="todo" title="ELLENŐRIZENDŐ: hányadik alkalom">Ellenőrizendő: hányadik?</mark>
+        </li>
+        <li class="symbol">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M32 8c8 12 14 20 14 28a14 14 0 0 1-28 0c0-8 6-16 14-28z" fill="#6FB8F0" stroke="#16131C" stroke-width="2.5" stroke-linejoin="round"/><path d="M26 34c0 5 3 8 7 8" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M6 56c5-4 9-4 13 0s9 4 13 0 9-4 13 0 9 4 13 0" stroke="#1F6FD1" stroke-width="3.5" stroke-linecap="round" fill="none"/></svg>
+          <b>Víz</b>
+        </li>
+        <li class="symbol">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M22 8 8 34h8L6 50h32L28 34h8z" fill="#3DA047" stroke="#16131C" stroke-width="2.5" stroke-linejoin="round"/><rect x="19" y="50" width="6" height="8" rx="1.5" fill="#8A5A00"/><path d="M44 18 34 38h6l-8 14h24l-8-14h6z" fill="#5DB846" stroke="#16131C" stroke-width="2.5" stroke-linejoin="round"/><rect x="41" y="52" width="6" height="6" rx="1.5" fill="#8A5A00"/></svg>
+          <b>Erdő</b>
+        </li>
+        <li class="symbol symbol--unknown"><span aria-hidden="true">?</span><span class="visually-hidden">Még nem ismert szimbólum</span></li>
+        <li class="symbol symbol--unknown"><span aria-hidden="true">?</span><span class="visually-hidden">Még nem ismert szimbólum</span></li>
+        <li class="symbol symbol--unknown"><span aria-hidden="true">?</span><span class="visually-hidden">Még nem ismert szimbólum</span></li>
+        <li class="symbol symbol--unknown"><span aria-hidden="true">?</span><span class="visually-hidden">Még nem ismert szimbólum</span></li>
+        <li class="symbol symbol--unknown"><span aria-hidden="true">?</span><span class="visually-hidden">Még nem ismert szimbólum</span></li>
+        <li class="symbol symbol--unknown"><span aria-hidden="true">?</span><span class="visually-hidden">Még nem ismert szimbólum</span></li>
+        <li class="symbol symbol--unknown"><span aria-hidden="true">?</span><span class="visually-hidden">Még nem ismert szimbólum</span></li>
+      </ul>
+      <p class="todo-note"><mark class="todo" title="ADAT KELL: a többi 7 szimbólum listája, sorrendben">Margarétától kérdezendő: a többi 7 szimbólum, sorrendben</mark></p>
+
+      <div class="menet-sub">
+        <h3>Egy 90 perces alkalom mozaikjai <mark class="todo" title="ELLENŐRIZENDŐ: így épül-e fel egy alkalom? (a szövegíró javaslata, jóváhagyandó)">Ellenőrizendő: így épül fel?</mark></h3>
+        <ol class="steps steps--prog steps--six" style="margin-top:1.5rem">
+          <li><h4>Érkezés és ráhangolódás</h4><p>a körben</p></li>
+          <li><h4>A nap képe</h4><p>mese vagy elképzelt táj</p></li>
+          <li><h4>Mozgás és közös játék</h4></li>
+          <li><h4>Alkotás</h4><p>festés, rajz, közös mű</p></li>
+          <li><h4>Zene, ritmus, hangszerek</h4></li>
+          <li><h4>Relaxáció és búcsúzó kör</h4></li>
+        </ol>
+        <p class="todo-note" style="margin-top:2rem"><mark class="todo" title="ADAT KELL: van-e szülői beszélgetés a csoport előtt és után? Kapnak-e visszajelzést?">Margarétától kérdezendő: van-e szülői beszélgetés a csoport előtt és után?</mark></p>
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--wave divider--grid" style="--divider-color:var(--krem)" aria-hidden="true"></div>
+
+  <!-- ============ prog.galeria ============
+       CSERÉLD: 4 fotóhely felirata (layout-spec / copy). Ha van valódi kép: <img ...> a .photo-placeholder helyére. -->
+  <section class="section grid-paper" aria-labelledby="galeria-cim">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Képekben</p>
+        <h2 id="galeria-cim">Egy kis ízelítő</h2>
+      </div>
+      <ul class="mini-gallery" data-lightbox>
+        <li><figure class="polaroid tape"><button class="mosaic__item" type="button" data-lightbox-item data-caption="A MOZAIK csoport üveglapra festett erdője" style="border-radius:2px;box-shadow:none"><span class="photo-placeholder photo-placeholder--sm" style="--ratio:1"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: üveglapra festett közös erdő</span></span></button><figcaption>közös erdő</figcaption></figure></li>
+        <li><figure class="polaroid tape tape--blue"><button class="mosaic__item" type="button" data-lightbox-item data-caption="Közös zenélés a MOZAIK szorongásoldó műhelyben" style="border-radius:2px;box-shadow:none"><span class="photo-placeholder photo-placeholder--sm" style="--ratio:1"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: gyerekek ütőhangszerekkel, csörgőkkel</span></span></button><figcaption>zenélünk</figcaption></figure></li>
+        <li><figure class="polaroid tape tape--green"><button class="mosaic__item" type="button" data-lightbox-item data-caption="Búcsúzó kör a szorongásoldó foglalkozás végén" style="border-radius:2px;box-shadow:none"><span class="photo-placeholder photo-placeholder--sm" style="--ratio:1"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: gyerekek körben, kézen fogva</span></span></button><figcaption>búcsúzó kör</figcaption></figure></li>
+        <li><figure class="polaroid tape tape--pink"><button class="mosaic__item" type="button" data-lightbox-item data-caption="Gyerekek alkotása a MOZAIK műhelyben" style="border-radius:2px;box-shadow:none"><span class="photo-placeholder photo-placeholder--sm" style="--ratio:1"><span class="photo-placeholder__tag">fotóhely</span><span class="photo-placeholder__label">Fotó: festékes kezek, színes alkotás közelről</span></span></button><figcaption>alkotás</figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
+  <div class="divider divider--wave divider--mirror" style="--divider-color:var(--feher)" aria-hidden="true"></div>
+
+  <!-- ============ prog.gyik ============
+       CSERÉLD: 3-4 kérdés (details/summary). Az id-k egyediek legyenek; ugyanezek a JSON-LD FAQPage-be. -->
+  <section class="section section--white" aria-labelledby="gyik-cim">
+    <div class="container container--narrow">
+      <div class="section-head">
+        <p class="eyebrow">Gyakori kérdések</p>
+        <h2 id="gyik-cim">Kérdések a MOZAIK műhelyről</h2>
+      </div>
+      <div class="faq">
+        <details id="gyik-kulonbseg" open>
+          <summary>Mi a különbség a MOZAIK és a Merész Macska között?</summary>
+          <div><p>A MOZAIK 6-10 éves gyerekeknek szól, és sok mesével, képpel, játékkal és alkotással dolgozik. A Merész Macska 12 éves kortól ajánlott, és a nagyobbaknak konkrét technikákat tanít a félelmek kezelésére. Ha a gyermek 10 és 12 év között van, beszéljük meg, melyik illik hozzá jobban.</p></div>
+        </details>
+        <details id="gyik-megszolalni">
+          <summary>Mi van, ha a gyermekem a csoportban sem mer megszólalni?</summary>
+          <div><p>Ezt senki nem várja el tőle. Sokan csendben figyelnek az első alkalmakon, és ez rendben van. A foglalkozásokon rajzolni, mozogni és alkotni is lehet, így a csendesebb gyerekek is megtalálják, hogyan kapcsolódjanak.</p></div>
+        </details>
+        <details id="gyik-kesobb">
+          <summary>Be lehet kapcsolódni később, menet közben?</summary>
+          <div><p>A tíz alkalom egymásra épül, és a gyerekeknek fontos, hogy ugyanazokkal a társakkal legyenek, ezért a csoport az elejétől a végéig együtt marad. Ha lemaradtak az indulásról, a következő csoportba szívesen várjuk. <mark class="todo" title="ELLENŐRIZENDŐ: zárt-e a MOZAIK csoport">Ellenőrizendő: zárt-e a csoport?</mark></p></div>
+        </details>
+        <details id="gyik-eleg">
+          <summary>Elég a tíz alkalom?</summary>
+          <div><p>Sok gyereknek sokat ad. Ha a végén úgy látjuk, hogy a gyermeknek még szüksége van támogatásra, javaslatot teszünk a folytatásra, például egyéni foglalkozásra vagy szülőkonzultációra.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+  <div class="divider divider--wave divider--grid" style="--divider-color:var(--krem)" aria-hidden="true"></div>
+
+  <!-- ============ prog.tovabbi ============
+       CSERÉLD: 3 másik program kártyája (mindegyik a saját data-program színével). -->
+  <section class="section grid-paper" aria-labelledby="tovabbi-cim">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Továbbiak</p>
+        <h2 id="tovabbi-cim">Ez is érdekelheti</h2>
+      </div>
+      <div class="grid grid--3 more-programs">
+        <article class="card card--program" data-program="kutyas-foglalkozasok">
+          <img class="card__icon" src="assets/svg/ikon-kutyas-foglalkozas.svg" alt="" width="92" height="92" loading="lazy">
+          <h3>Kutyás foglalkozások Zafírral</h3>
+          <div class="card__meta"><span>óvodás és kisiskolás csoport</span><span>10 alkalom</span></div>
+          <p>Ha a gyermek egy kutya mellett könnyebben oldódik.</p>
+          <a class="card__more" href="program-kutyas-foglalkozasok.html">Részletek<span class="visually-hidden">: Kutyás foglalkozások Zafírral</span> <!-- @icon nyil --></a>
+        </article>
+        <article class="card card--program" data-program="meresz-macska">
+          <img class="card__icon" src="assets/svg/ikon-meresz-macska.svg" alt="" width="92" height="92" loading="lazy">
+          <h3>Merész Macska</h3>
+          <div class="card__meta"><span>12 éves kortól</span></div>
+          <p>Ha a gyermek már elmúlt 12 éves.</p>
+          <a class="card__more" href="program-meresz-macska.html">Részletek<span class="visually-hidden">: Merész Macska</span> <!-- @icon nyil --></a>
+        </article>
+        <article class="card card--program" data-program="szulokonzultacio">
+          <img class="card__icon" src="assets/svg/ikon-szulokonzultacio.svg" alt="" width="92" height="92" loading="lazy">
+          <h3>Szülőkonzultáció</h3>
+          <div class="card__meta"><span>szülőknek</span></div>
+          <p>Ha szeretnék tudni, hogyan segíthetnek otthon a szorongó gyereknek.</p>
+          <a class="card__more" href="program-szulokonzultacio.html">Részletek<span class="visually-hidden">: Szülőkonzultáció</span> <!-- @icon nyil --></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CSERÉLD: a CTA-sáv programra szabott szövege (copy fájl "global.cta-band (programra szabva)"), a program ikonja és a ?program=<slug> -->
+<!-- @include cta-band prev="var(--krem)" title="Érdeklődjenek a következő MOZAIK csoportról" text="A csoportok kis létszámúak, ezért érdemes időben jelezni. Előtte szívesen beszélünk Önökkel arról, jó választás-e a MOZAIK a gyermeküknek." btn_label="Érdeklődöm a következő csoportról" btn_href="kapcsolat.html?program=mozaik#urlap" btn_class="btn--prog" icon="assets/svg/ikon-mozaik.svg" -->
+<!-- @include footer -->
+</body>
+</html>
