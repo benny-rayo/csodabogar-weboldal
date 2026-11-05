@@ -13,6 +13,9 @@
 - Közös stílus: `public/assets/css/site.css`, a tokenek a fájl elején vannak. Közös JS: `public/assets/js/site.js`. Új CSS-t a fájl végére, külön kommentblokkba tegyél.
 - Űrlap: `form[data-endpoint="/api/kapcsolat"]` → `api/kapcsolat.js` → Supabase `kapcsolat_uzenetek` tábla (RLS be van kapcsolva, és nincs nyilvános szabály) + Resend e-mail.
 - Minden változtatás után futtasd: build, `python3 src/build/test_site.py` (0 hiba kell), `node --test tests/*.test.js`.
+- A domain (canonical, og:url, og:image, JSON-LD, sitemap.xml) a `build.py` `SITE_URL` értékéből jön. A JSON-LD-ben relatív hivatkozást írj (`#id`, `oldal.html`, `assets/...`), a build teszi abszolúttá.
+- Új oldal: `src/build/pages/<slug>.html`, a build automatikusan a sitemap-be teszi (kivéve a `NOINDEX` listát). A `public/` mappát is commitold: a Vercelen nincs build, és a CI elbukik, ha a `public/` elavult.
+- Jogi oldalak: `adatkezelesi-tajekoztato.html`, `impresszum.html`. Ha az űrlap új mezőt kap, vagy új szolgáltató kerül be (pl. analitika), a tájékoztatót is frissíteni kell.
 
 ## Design-rendszer: „A Csodabogár füzet”
 - Kockás füzetlap háttér, fehér körvonalas matrica-címsorok, ragasztószalagos polaroid fotók, égkék, felhős sávok. A logó négy színével (piros, zöld, kék, sárga) repülő katicák.

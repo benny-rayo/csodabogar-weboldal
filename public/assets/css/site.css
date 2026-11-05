@@ -1530,3 +1530,26 @@ body.todos-hidden .symbol--unknown{display:none}
 .form-send-error{border:2px solid var(--piros,#D61F27);background:#FFF1F1;border-radius:16px;padding:.9rem 1.1rem;margin:0 0 1rem;color:var(--szoveg,#3B2416)}
 .form-send-error a{color:inherit;font-weight:700}
 .contact-form__submit[disabled]{opacity:.7;cursor:progress}
+
+/* === Jogi oldalak (adatkezelési tájékoztató, impresszum) + 404 === */
+.legal-hero{padding-bottom:clamp(3rem,5vw,4.5rem)}
+.legal__meta{margin-top:1rem;font-size:var(--fs-small);color:var(--text-muted)}
+.legal-body{padding-top:clamp(2rem,4vw,3.5rem)}
+.legal h2{font-size:var(--fs-h4);margin:2.25rem 0 .6rem}
+.legal h2:first-child{margin-top:0}
+.legal h3{font-size:1.15rem;margin:1.5rem 0 .4rem;color:var(--navy)}
+.legal ul{margin:0 0 1em;max-width:var(--measure)}
+.legal li+li{margin-top:.35em}
+.legal__facts{list-style:none;padding:0}
+.legal__facts li{display:grid;grid-template-columns:12.5rem 1fr;gap:0 .75rem;align-items:baseline}
+.legal__facts li>span:first-child{font-weight:800}
+.legal__facts li>mark{grid-column:2;justify-self:start}
+@media (max-width:540px){.legal__facts li{grid-template-columns:1fr}.legal__facts li>mark{grid-column:1}}
+.legal__note{background:var(--prog-soft);border-radius:var(--r-md);padding:.85rem 1.1rem}
+.legal__address{font-style:normal;margin:0 0 1em;padding:1rem 1.25rem;border:2px solid var(--racs-eros);border-radius:var(--r-md);max-width:var(--measure)}
+.legal a{overflow-wrap:anywhere}
+.legal__back{margin-top:2.5rem}
+.notfound{text-align:center;min-height:min(70vh,640px);display:flex;align-items:center}
+.notfound__inner p{margin-inline:auto}
+.notfound__bug{width:clamp(130px,22vw,180px);margin:0 auto 1rem}
+.notfound__actions{justify-content:center}

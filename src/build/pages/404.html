@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<!-- 404-es oldal. A Vercel bármilyen nem létező útvonalon ezt mutatja, ezért a build gyökér-relatív (/...) linkeket ír bele. -->
+<!-- @include head title="Ez az oldal elrepült | Csodabogár Fejlesztő Műhely, Tata" description="A keresett oldal nem található." robots="noindex, follow" -->
+</head>
+<body>
+<!-- @include header active="none" -->
+
+<main id="tartalom" tabindex="-1">
+
+  <section class="page-hero section--sky notfound" aria-labelledby="hero-cim">
+    <img class="deco drift deco--hide-sm" src="assets/svg/felho.svg" alt="" width="150" height="90" style="width:150px;left:8%;top:30px">
+    <img class="deco drift" src="assets/svg/felho.svg" alt="" width="110" height="66" style="width:clamp(80px,14vw,110px);right:6%;bottom:48px;--drift-dur:30s;opacity:.9">
+    <div class="container container--narrow notfound__inner">
+      <img class="notfound__bug float" src="assets/svg/kabala-repulo.svg" alt="" width="180" height="128" style="--r0:-6deg;--r1:6deg">
+      <p class="eyebrow rise">404</p>
+      <h1 class="sticker-title rise" id="hero-cim"><span>Ez az oldal</span> <span class="is-navy">elrepült</span></h1>
+      <p class="lead rise" style="--d:.12s">Nem találjuk, amit keres. Lehet, hogy elköltözött, vagy elírás került a címbe. Innen biztosan továbbjut:</p>
+      <div class="cluster btn-row notfound__actions">
+        <a class="btn btn--primary btn--lg" href="index.html">Vissza a főoldalra</a>
+        <a class="btn btn--secondary btn--lg" href="programok.html">Programjaink</a>
+        <a class="btn btn--secondary btn--lg" href="kapcsolat.html">Kapcsolat</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- @include footer -->
+</body>
+</html>

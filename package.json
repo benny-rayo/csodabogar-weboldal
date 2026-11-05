@@ -4,10 +4,13 @@
   "private": true,
   "description": "Csodabogár Fejlesztő Műhely (Tata) weboldala: statikus oldal + Vercel függvény + Supabase",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build:pages": "python3 src/build/build.py",
     "test:api": "node --test tests/*.test.js",
-    "test:pages": "python3 src/build/test_site.py"
+    "test:pages": "python3 src/build/test_site.py",
+    "preview": "python3 -m http.server 8000 --directory public"
   }
 }

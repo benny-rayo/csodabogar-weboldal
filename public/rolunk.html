@@ -1,20 +1,23 @@
 <!doctype html>
-<!-- GENERÁLT FÁJL: ne szerkeszd kézzel. Forrás: _build/pages/rolunk.html, build: python3 _build/build.py -->
+<!-- GENERÁLT FÁJL: ne szerkeszd kézzel. Forrás: src/build/pages/rolunk.html, build: python3 src/build/build.py -->
 <html lang="hu">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Rólunk | Píri Margaréta és a Csodabogár Fejlesztő Műhely, Tata</title>
 <meta name="description" content="Píri Margaréta pszichológus és gyógypedagógus tíz éve fejleszti a tatai gyerekeket. Ismerjék meg a műhelyt, a szemléletünket és a csapatot.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tataifejlesztes.hu/rolunk">
 <meta name="theme-color" content="#FAF4E8">
 <meta name="color-scheme" content="light">
-<!-- Open Graph (élesítéskor az og:image és og:url abszolút URL legyen) -->
+<!-- Open Graph: az abszolút URL-eket a build a SITE_URL-ből tölti ki -->
 <meta property="og:type" content="profile">
 <meta property="og:locale" content="hu_HU">
 <meta property="og:site_name" content="Csodabogár Fejlesztő Műhely, Tata">
+<meta property="og:url" content="https://tataifejlesztes.hu/rolunk">
 <meta property="og:title" content="Rólunk | Píri Margaréta és a Csodabogár Fejlesztő Műhely, Tata">
 <meta property="og:description" content="Píri Margaréta pszichológus és gyógypedagógus tíz éve fejleszti a tatai gyerekeket. Ismerjék meg a műhelyt, a szemléletünket és a csapatot.">
-<meta property="og:image" content="assets/img/og-image.png">
+<meta property="og:image" content="https://tataifejlesztes.hu/assets/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Csodabogár Fejlesztő Műhely, Tata">
@@ -36,33 +39,33 @@
   "@graph": [
     {
       "@type": "AboutPage",
-      "@id": "#rolunk",
+      "@id": "https://tataifejlesztes.hu/#rolunk",
       "name": "Rólunk | Píri Margaréta és a Csodabogár Fejlesztő Műhely, Tata",
       "description": "Píri Margaréta pszichológus és gyógypedagógus tíz éve fejleszti a tatai gyerekeket. Ismerjék meg a műhelyt, a szemléletünket és a csapatot.",
       "inLanguage": "hu",
-      "about": { "@id": "#csodabogar" },
-      "mainEntity": { "@id": "#piri-margareta" }
+      "about": { "@id": "https://tataifejlesztes.hu/#csodabogar" },
+      "mainEntity": { "@id": "https://tataifejlesztes.hu/#piri-margareta" }
     },
     {
       "@type": "Person",
-      "@id": "#piri-margareta",
+      "@id": "https://tataifejlesztes.hu/#piri-margareta",
       "name": "Píri Margaréta",
       "jobTitle": ["pszichológus", "gyógypedagógus"],
       "description": "A Csodabogár Fejlesztő Műhely vezetője Tatán. Gyógypedagógusként a tanulás nehézségeivel, pszichológusként a gyerekek érzelmi világával dolgozik.",
       "knowsAbout": ["gyógypedagógia", "gyermekpszichológia", "szorongásoldás", "iskolaelőkészítés", "tanulási nehézségek"],
-      "worksFor": { "@id": "#csodabogar" },
+      "worksFor": { "@id": "https://tataifejlesztes.hu/#csodabogar" },
       "workLocation": { "@type": "Place", "name": "Tata" }
     },
     {
       "@type": ["LocalBusiness", "EducationalOrganization"],
-      "@id": "#csodabogar",
+      "@id": "https://tataifejlesztes.hu/#csodabogar",
       "name": "Csodabogár Fejlesztő Műhely",
-      "image": "assets/img/og-image.png",
+      "image": "https://tataifejlesztes.hu/assets/img/og-image.png",
       "telephone": "+36 30 632 5350",
       "email": "tataifejlesztes@gmail.com",
       "address": { "@type": "PostalAddress", "streetAddress": "Alkotmány u. 2.", "postalCode": "2890", "addressLocality": "Tata", "addressCountry": "HU" },
       "sameAs": ["https://www.facebook.com/tataifejlesztes"],
-      "employee": { "@id": "#piri-margareta" }
+      "employee": { "@id": "https://tataifejlesztes.hu/#piri-margareta" }
     }
   ]
 }
@@ -549,7 +552,7 @@
   </div>
   <div class="container site-footer__bottom">
     <p>© 2026 Csodabogár Fejlesztő Műhely, Tata</p>
-    <p>Adatkezelési tájékoztató <span aria-hidden="true">·</span> Impresszum <mark class="todo" title="ADAT KELL: adatkezelési tájékoztató szövege, a vállalkozás hivatalos neve, adószám az impresszumhoz">Adat kell: jogi oldalak</mark></p>
+    <p><a href="adatkezelesi-tajekoztato.html">Adatkezelési tájékoztató</a> <span aria-hidden="true">·</span> <a href="impresszum.html">Impresszum</a></p>
     <button class="todo-toggle" type="button" aria-pressed="false" data-todo-toggle>
       <span class="todo-toggle__swatch" aria-hidden="true"></span><span data-todo-toggle-label>Hiányzó adatok elrejtése</span>
     </button>

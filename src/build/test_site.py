@@ -15,6 +15,7 @@ teljes oldalas screenshotot készít a _screens/ mappába, és jelenti:
       másolás   button[data-copy]: kattintásra visszajelzés (Kimásolva / Kijelölve)
 Kilépési kód 1, ha hiba volt.
 """
+import os
 import sys
 import threading
 import functools
@@ -148,7 +149,8 @@ def main():
     base = f"http://127.0.0.1:{httpd.server_address[1]}"
     errors = 0
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        # CHROMIUM_PATH: meglévő Chromium használata (ha a Playwright saját böngészője nincs letöltve)
+        browser = p.chromium.launch(executable_path=os.environ.get("CHROMIUM_PATH") or None)
         for name in names:
             for w in WIDTHS:
                 ctx = browser.new_context(viewport={"width": w, "height": 900}, device_scale_factor=1)

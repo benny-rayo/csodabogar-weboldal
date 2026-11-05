@@ -11,12 +11,18 @@ Mit csinál?
   A fejléc aktív menüpontját az `active` paraméter adja (index | programok | rolunk | galeria | kapcsolat);
   ha hiányzik, a fájlnévből következtet (program-*.html -> programok).
 
+  Ezen felül legyártja a public/sitemap.xml és public/robots.txt fájlt, a <head>-be canonical és
+  abszolút og:url / og:image kerül, a JSON-LD relatív hivatkozásai pedig abszolút URL-ek lesznek.
+  A domain a SITE_URL környezeti változóból jön (alapérték: https://tataifejlesztes.hu).
+
 Futtatás (a projekt bármely mappájából):
   python3 src/build/build.py            # minden oldal
   python3 src/build/build.py index      # csak egy oldal (fájlnév .html nélkül)
+  SITE_URL=https://masik-domain.hu python3 src/build/build.py
 
 A kész public/*.html fájlokat NE szerkeszd kézzel: a következő build felülírja őket.
 """
+import os
 import re
 import sys
 from pathlib import Path
@@ -29,6 +35,13 @@ PARTIALS = BUILD / "partials"
 SVG = SITE / "assets" / "svg"
 
 NAV_KEYS = ["index", "programok", "rolunk", "galeria", "kapcsolat"]
+
+# Az éles domain (canonical, og:url, og:image, sitemap). Domainváltáskor itt vagy a SITE_URL változóban írd át.
+SITE_URL = os.environ.get("SITE_URL", "https://tataifejlesztes.hu").rstrip("/")
+# Ezek az oldalak nem kerülnek a sitemap-be (noindex).
+NOINDEX = {"404"}
+# A 404-es oldalt bármilyen mély útvonalon is kiszolgálhatja a Vercel, ezért ott gyökér-relatív linkek kellenek.
+ROOT_RELATIVE = {"404"}
 
 INCLUDE_RE = re.compile(r"<!--\s*@include\s+([\w-]+)(.*?)-->", re.S)
 ICON_RE = re.compile(r"<!--\s*@icon\s+([\w-]+)(.*?)-->")
@@ -105,6 +118,42 @@ def keep_ranges_together(html):
     return "".join(parts)
 
 
+def page_url(name):
+    """Tiszta (kiterjesztés nélküli) abszolút URL, ahogy a Vercel cleanUrls kiszolgálja."""
+    return SITE_URL + "/" if name == "index" else f"{SITE_URL}/{name}"
+
+
+LD_RE = re.compile(r'(<script type="application/ld\+json">)(.*?)(</script>)', re.S)
+LD_URL_RE = re.compile(r'("(?:@id|url|image|logo|item)":\s*")([^"]+)(")')
+
+
+def absolutize_jsonld(html):
+    """A JSON-LD-ben a relatív hivatkozásokból (#id, oldal.html, assets/...) abszolút URL lesz."""
+    def fix(v):
+        if re.match(r"^(https?:|mailto:|tel:)", v):
+            return v
+        if v.startswith("#"):
+            return f"{SITE_URL}/{v}"
+        if v.endswith(".html") and "/" not in v:
+            return page_url(v[:-5])
+        return f"{SITE_URL}/{v.lstrip('/')}"
+
+    def block(m):
+        return m.group(1) + LD_URL_RE.sub(lambda u: u.group(1) + fix(u.group(2)) + u.group(3), m.group(2)) + m.group(3)
+    return LD_RE.sub(block, html)
+
+
+def root_relative(html):
+    """Relatív src/href/srcset -> gyökér-relatív (/assets/..., /index.html). Csak a 404-es oldalhoz."""
+    skip = r"(?!https?:|mailto:|tel:|#|data:|/)"
+    html = re.sub(r'\b(src|href)="' + skip, r'\1="/', html)
+    html = re.sub(r'(imagesrcset|srcset)="([^"]+)"',
+                  lambda m: m.group(1) + '="' + ", ".join(
+                      ("/" + p.strip()) if not p.strip().startswith(("/", "http")) else p.strip()
+                      for p in m.group(2).split(",")) + '"', html)
+    return html
+
+
 def nav_active(page_html, active):
     """aria-current="page" a data-nav="<active>" linkekre."""
     return re.sub(
@@ -127,6 +176,8 @@ def render(name):
             warnings.append(f"{name}: nincs ilyen partial: {pname}")
             return m.group(0)
         params.setdefault("year", str(date.today().year))
+        params.setdefault("site_url", SITE_URL)
+        params.setdefault("canonical", page_url(name))
         out = fill(ppath.read_text(encoding="utf-8"), params, f"{name}/{pname}")
         if pname == "header":
             out = nav_active(out, params.get("active", active_from_name))
@@ -138,12 +189,17 @@ def render(name):
     text = SVG_RE.sub(lambda m: svg_inline(m.group(1), parse_attrs(m.group(2)).get("class", "")), text)
     text = text.replace("{{year}}", str(date.today().year))
     text = keep_ranges_together(text)
+    text = absolutize_jsonld(text)
+    if name in NOINDEX:  # nem indexelt oldalnak nincs saját canonical / og:url címe
+        text = re.sub(r'<(?:link rel="canonical"|meta property="og:url")[^>]*>\n?', "", text)
+    if name in ROOT_RELATIVE:
+        text = root_relative(text)
 
     # 3) ellenőrzések
     if "@include" in text or "{{" in text:
         warnings.append(f"{name}: maradt feldolgozatlan jelölő (@include vagy {{{{ }}}})")
 
-    banner = f"<!-- GENERÁLT FÁJL: ne szerkeszd kézzel. Forrás: _build/pages/{name}.html, build: python3 _build/build.py -->\n"
+    banner = f"<!-- GENERÁLT FÁJL: ne szerkeszd kézzel. Forrás: src/build/pages/{name}.html, build: python3 src/build/build.py -->\n"
     text = re.sub(r"^(<!doctype html>\s*)", r"\1" + banner, text, count=1, flags=re.I)
     (SITE / f"{name}.html").write_text(text, encoding="utf-8")
 
@@ -155,18 +211,32 @@ def check_refs(name):
     for attr in re.findall(r'(?:src|href)="([^"]+)"', text):
         if re.match(r"^(https?:|mailto:|tel:|#|data:)", attr):
             continue
-        local = attr.split("#")[0].split("?")[0]
+        local = attr.split("#")[0].split("?")[0].lstrip("/")
         if local and not (SITE / local).exists():
             missing.add(local)
     for s in re.findall(r'srcset="([^"]+)"', text):
         for part in s.split(","):
-            local = part.strip().split(" ")[0]
+            local = part.strip().split(" ")[0].lstrip("/")
             if local and not (SITE / local).exists():
                 missing.add(local)
     for m in re.findall(r'content="(assets/[^"]+)"', text):
         if not (SITE / m).exists():
             missing.add(m)
     return missing
+
+
+def write_seo_files():
+    """sitemap.xml és robots.txt a public/ gyökerébe (mindig az összes oldalból)."""
+    names = sorted(p.stem for p in PAGES.glob("*.html") if p.stem not in NOINDEX)
+    names.sort(key=lambda n: (n != "index", n))
+    urls = "\n".join(f"  <url><loc>{page_url(n)}</loc></url>" for n in names)
+    (SITE / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "\n</urlset>\n",
+        encoding="utf-8")
+    (SITE / "robots.txt").write_text(
+        "User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: " + SITE_URL + "/sitemap.xml\n",
+        encoding="utf-8")
 
 
 def main():
@@ -178,6 +248,8 @@ def main():
     for n in names:
         render(n)
         print(f"  ✓ {n}.html")
+    write_seo_files()
+    print("  ✓ sitemap.xml, robots.txt")
     for n in names:
         for m in check_refs(n):
             all_missing.setdefault(m, []).append(n)

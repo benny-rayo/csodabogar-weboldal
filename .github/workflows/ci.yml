@@ -1,0 +1,56 @@
+# Minden push és pull request után: build-ellenőrzés, API-tesztek, böngészős oldalteszt.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Oldalak újragenerálása
+        run: python3 src/build/build.py
+
+      - name: A public/ naprakész-e?
+        run: |
+          if ! git diff --quiet -- public; then
+            echo "::error::A public/ mappa nem egyezik a forrással. Futtasd: python3 src/build/build.py, majd commitold a változást (a public/*.html-t ne szerkeszd kézzel)."
+            git diff --stat -- public
+            exit 1
+          fi
+          if [ -n "$(git ls-files --others --exclude-standard public)" ]; then
+            echo "::error::A build új fájlt hozott létre a public/ alatt, ami nincs commitolva:"
+            git ls-files --others --exclude-standard public
+            exit 1
+          fi
+
+      - name: API-tesztek (űrlap-függvény)
+        run: node --test tests/*.test.js
+
+      - name: Playwright telepítése
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Böngészős oldalteszt (konzolhiba, 404, mobil túlcsordulás, űrlap)
+        run: python3 src/build/test_site.py
+
+      - name: Képernyőképek feltöltése
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screens
+          path: _screens/
+          retention-days: 7

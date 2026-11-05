@@ -1,20 +1,23 @@
 <!doctype html>
-<!-- GENERÁLT FÁJL: ne szerkeszd kézzel. Forrás: _build/pages/index.html, build: python3 _build/build.py -->
+<!-- GENERÁLT FÁJL: ne szerkeszd kézzel. Forrás: src/build/pages/index.html, build: python3 src/build/build.py -->
 <html lang="hu">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Csodabogár Fejlesztő Műhely Tata | Gyermekfejlesztés, pszichológus</title>
 <meta name="description" content="Egyéni fejlesztés, szorongásoldó csoportok és iskolaelőkészítés Tatán, pszichológus és gyógypedagógus vezetésével. 10 éve Tatán, közel 1000 gyerek. Kérjen időpontot.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tataifejlesztes.hu/">
 <meta name="theme-color" content="#FAF4E8">
 <meta name="color-scheme" content="light">
-<!-- Open Graph (élesítéskor az og:image és og:url abszolút URL legyen) -->
+<!-- Open Graph: az abszolút URL-eket a build a SITE_URL-ből tölti ki -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="hu_HU">
 <meta property="og:site_name" content="Csodabogár Fejlesztő Műhely, Tata">
+<meta property="og:url" content="https://tataifejlesztes.hu/">
 <meta property="og:title" content="Csodabogár Fejlesztő Műhely Tata | Gyermekfejlesztés, pszichológus">
 <meta property="og:description" content="Egyéni fejlesztés, szorongásoldó csoportok és iskolaelőkészítés Tatán, pszichológus és gyógypedagógus vezetésével. 10 éve Tatán, közel 1000 gyerek. Kérjen időpontot.">
-<meta property="og:image" content="assets/img/og-image.png">
+<meta property="og:image" content="https://tataifejlesztes.hu/assets/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Csodabogár Fejlesztő Műhely, Tata">
@@ -37,12 +40,12 @@
   "@graph": [
     {
       "@type": ["LocalBusiness", "EducationalOrganization"],
-      "@id": "#csodabogar",
+      "@id": "https://tataifejlesztes.hu/#csodabogar",
       "name": "Csodabogár Fejlesztő Műhely",
       "alternateName": "Csodabogár",
       "description": "Egyéni fejlesztés, iskolaelőkészítés, szorongásoldó csoportok, kutyás foglalkozások és nyári Barátságtábor 5-16 éves gyerekeknek Tatán, pszichológus és gyógypedagógus vezetésével.",
-      "image": "assets/img/og-image.png",
-      "logo": "assets/svg/logo.svg",
+      "image": "https://tataifejlesztes.hu/assets/img/og-image.png",
+      "logo": "https://tataifejlesztes.hu/assets/svg/logo.svg",
       "telephone": "+36 30 632 5350",
       "email": "tataifejlesztes@gmail.com",
       "address": {
@@ -54,16 +57,16 @@
       },
       "areaServed": { "@type": "City", "name": "Tata" },
       "sameAs": ["https://www.facebook.com/tataifejlesztes"],
-      "founder": { "@id": "#piri-margareta" },
-      "employee": { "@id": "#piri-margareta" },
+      "founder": { "@id": "https://tataifejlesztes.hu/#piri-margareta" },
+      "employee": { "@id": "https://tataifejlesztes.hu/#piri-margareta" },
       "slogan": "Kérlek, fogadj el olyannak, amilyen vagyok, s akkor egyre jobb leszek!"
     },
     {
       "@type": "Person",
-      "@id": "#piri-margareta",
+      "@id": "https://tataifejlesztes.hu/#piri-margareta",
       "name": "Píri Margaréta",
       "jobTitle": ["pszichológus", "gyógypedagógus"],
-      "worksFor": { "@id": "#csodabogar" },
+      "worksFor": { "@id": "https://tataifejlesztes.hu/#csodabogar" },
       "workLocation": { "@type": "Place", "name": "Tata" }
     },
     {
@@ -601,7 +604,7 @@
   </div>
   <div class="container site-footer__bottom">
     <p>© 2026 Csodabogár Fejlesztő Műhely, Tata</p>
-    <p>Adatkezelési tájékoztató <span aria-hidden="true">·</span> Impresszum <mark class="todo" title="ADAT KELL: adatkezelési tájékoztató szövege, a vállalkozás hivatalos neve, adószám az impresszumhoz">Adat kell: jogi oldalak</mark></p>
+    <p><a href="adatkezelesi-tajekoztato.html">Adatkezelési tájékoztató</a> <span aria-hidden="true">·</span> <a href="impresszum.html">Impresszum</a></p>
     <button class="todo-toggle" type="button" aria-pressed="false" data-todo-toggle>
       <span class="todo-toggle__swatch" aria-hidden="true"></span><span data-todo-toggle-label>Hiányzó adatok elrejtése</span>
     </button>
