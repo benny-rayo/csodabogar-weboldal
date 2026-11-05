@@ -11,7 +11,8 @@ Mit csinál?
   A fejléc aktív menüpontját az `active` paraméter adja (index | programok | rolunk | galeria | kapcsolat);
   ha hiányzik, a fájlnévből következtet (program-*.html -> programok).
 
-  Ezen felül legyártja a public/sitemap.xml és public/robots.txt fájlt, a <head>-be canonical és
+  Ezen felül legyártja a public/sitemap.xml és public/robots.txt fájlt, a docs/hianyzo-adatok.md
+  ellenőrző listát (az összes sárga cetliből), a <head>-be canonical és
   abszolút og:url / og:image kerül, a JSON-LD relatív hivatkozásai pedig abszolút URL-ek lesznek.
   A domain a SITE_URL környezeti változóból jön (alapérték: https://tataifejlesztes.hu).
 
@@ -250,6 +251,10 @@ def main():
         print(f"  ✓ {n}.html")
     write_seo_files()
     print("  ✓ sitemap.xml, robots.txt")
+    sys.path.insert(0, str(BUILD))
+    import hianyzo_adatok
+    n_adat, n_ell = hianyzo_adatok.main()
+    print(f"  ✓ docs/hianyzo-adatok.md ({n_adat} hiányzó adat, {n_ell} ellenőrizendő)")
     for n in names:
         for m in check_refs(n):
             all_missing.setdefault(m, []).append(n)

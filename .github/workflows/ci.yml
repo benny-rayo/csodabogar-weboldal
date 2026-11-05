@@ -23,11 +23,11 @@ jobs:
       - name: Oldalak újragenerálása
         run: python3 src/build/build.py
 
-      - name: A public/ naprakész-e?
+      - name: A public/ és a hiányzó-adat lista naprakész-e?
         run: |
-          if ! git diff --quiet -- public; then
+          if ! git diff --quiet -- public docs/hianyzo-adatok.md; then
             echo "::error::A public/ mappa nem egyezik a forrással. Futtasd: python3 src/build/build.py, majd commitold a változást (a public/*.html-t ne szerkeszd kézzel)."
-            git diff --stat -- public
+            git diff --stat -- public docs/hianyzo-adatok.md
             exit 1
           fi
           if [ -n "$(git ls-files --others --exclude-standard public)" ]; then

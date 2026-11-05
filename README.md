@@ -14,6 +14,8 @@ src/build/test_site.py  ← böngészős teszt (konzolhiba, 404, mobil túlcsord
 api/kapcsolat.js        ← POST /api/kapcsolat: űrlap → Supabase + e-mail
 supabase/migrations/    ← az adatbázis-tábla SQL-je
 tests/                  ← az API tesztjei (node --test)
+docs/AI-WIKI.md         ← a projekt emlékezete: logika, döntések, tanulságok, munkanapló
+docs/hianyzo-adatok.md  ← az összes sárga cetli listája (automatikus, a build készíti)
 .github/workflows/      ← CI: minden pushnál build-ellenőrzés + tesztek
 ```
 
@@ -66,7 +68,7 @@ Ha más lesz a domain: `SITE_URL=https://masik-domain.hu python3 src/build/build
 ## Sárga „Adat kell” cetlik
 - Előnézeten (`localhost`, `*.vercel.app`) a cetlik **látszanak**, hogy Margaréta lássa, mi hiányzik még.
 - Saját domainen (pl. `tataifejlesztes.hu`) **automatikusan rejtve** vannak, a kapcsológombbal együtt.
-- Élesítés előtt a cetliket érdemes tényleges tartalommal kiváltani. Lista: `grep -rn 'class="todo"' src/build`
+- Élesítés előtt a cetliket érdemes tényleges tartalommal kiváltani. A teljes lista: `docs/hianyzo-adatok.md` (minden buildnél frissül).
 
 ## Szerkesztés
 1. Szöveget/oldalt **mindig a `src/build/pages/` alatt** szerkessz (a `public/*.html` generált, felülíródik).
@@ -84,7 +86,7 @@ Helyi előnézet: `python3 -m http.server 8000 --directory public` (az űrlap k�
 - [x] Adatkezelési tájékoztató és impresszum oldal (tervezet, a hiányzó adatok sárga cetlin).
 - [ ] A jogi oldalak hiányzó adatai: hivatalos név és forma, székhely, nyilvántartási szám, adószám, megőrzési idő, hatályba lépés dátuma.
 - [ ] Az adatkezelési tájékoztatót adatvédelemben jártas szakember nézze át (gyermekekről szóló, érzékeny adatok). Adatfeldolgozói szerződés (DPA) a Vercellel, Supabase-zel, Resenddel.
-- [ ] Margaréta kérdéslistája: `docs/kerdesek-margaretanak.md`.
+- [ ] Margaréta kérdéslistája: `docs/kerdesek-margaretanak.md`, és az összes cetli listája: `docs/hianyzo-adatok.md`.
 - [ ] Valódi fotók a helyőrzők helyére (a jelenlegi képek a kreatívokból kivágott, ideiglenes AI-képek).
 - [x] Az `og:image` és az `og:url` abszolút URL (a `SITE_URL`-ből).
 - [ ] Ha a régi `tataifejlesztes.hu` oldalnak voltak ismert aloldalai, azokra átirányítás a `vercel.json` `redirects` részében (különben 404-et kapnak a régi Google-találatok).

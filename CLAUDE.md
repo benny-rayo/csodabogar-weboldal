@@ -2,6 +2,11 @@
 
 Útmutató annak az AI-asszisztensnek (vagy fejlesztőnek), aki ebben a repóban dolgozik. Minden munka előtt olvasd el.
 
+## Kötelező: AI-wiki (`docs/AI-WIKI.md`)
+- **Munka elején** olvasd el a `docs/AI-WIKI.md`-t: ott van a projekt logikája, a döntések indoklása, a tanulságok, a jelenlegi állapot és a következő lépések.
+- **Munka végén, a commit előtt** frissítsd: új bejegyzés a munkanaplóba, új döntések (a miérttel), új tanulságok, és írd át a „Jelenlegi állapot” és „Következő lépések” részt. A wiki frissítése a munka része, nem opcionális.
+- Ez a fájl (CLAUDE.md) a szabályokat tartalmazza, a wiki a történetet és a miérteket.
+
 ## A projekt
 - Ügyfél: **Píri Margaréta** (becenév: Margó), pszichológus és gyógypedagógus, a tatai **Csodabogár Fejlesztő Műhely** vezetője. Megrendelő: Benedek (RAYO Marketing), Margaréta fia.
 - Közönség: 5-16 éves gyerekek szülei. A design gyerekes és játékos, a szöveg a szülőknek szól.
@@ -40,4 +45,6 @@
 - Kerüld az AI-szagú fordulatokat („nem csupán... hanem”, „fedezze fel”, „utazás”, „holisztikus”).
 
 ## Nyitott pontok
-Lásd `docs/kerdesek-margaretanak.md` és a README „Élesítés előtti teendők” részét.
+- Hiányzó/ellenőrizendő tartalom: `docs/hianyzo-adatok.md` (automatikus, minden buildnél a sárga cetlikből készül, ne szerkeszd kézzel).
+- Rövid kérdéslista Margarétának: `docs/kerdesek-margaretanak.md`.
+- Élesítés: README „Élesítés előtti teendők”, és a wiki „Következő lépések” része.

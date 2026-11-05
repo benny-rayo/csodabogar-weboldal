@@ -1,5 +1,7 @@
 ## Kérdéslista Margarétának
 
+> Ez a rövid, összefoglaló kérdéslista. Az oldal összes sárga cetlije (oldalanként, a pontos szöveggel) itt van: `docs/hianyzo-adatok.md`.
+
 Kedves Margaréta! Az alábbi adatok hiányoznak ahhoz, hogy az oldal elkészülhessen. A legfontosabbak elöl vannak. Ha valamire most nem tud válaszolni, nyugodtan hagyja ki.
 
 **Önről és a műhelyről**
